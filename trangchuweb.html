@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Store Nguyen Tien Dat</title>
+    <link rel="stylesheet" href="trangchu1.css">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
+    <style>
+         #accountInfo {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    #userInfo {
+        display: none;
+        position: absolute;
+        margin-left:-40px;
+        background-color: #f9f9f9;
+        width: 95px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        
+        
+    }
+
+    #accountInfo:hover #userInfo {
+        display: block;
+    }
+
+    #userInfo a {
+        color: black;
+        padding: 12px 16px;
+        width:120px;
+        text-decoration: none;
+        display: block;
+        font-size:15px
+    }
+
+    #userInfo a:hover {
+        background-color: #f1f1f1;
+        color:#CC9966
+    }
+
+    #icon2 {
+        font-size: 30px;
+        color: #000;
+    }
+
+    li {
+        list-style: none;
+    }
+
+
+    .dac-diem {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            margin-top: 1250px;
+          
+        }
+        .dac-diem .dac-diem-item {
+            text-align: center;
+        }
+        .dac-diem .dac-diem-item img {
+            width: 50px;
+            height: 50px;
+        }
+        .dac-diem .dac-diem-item h3 {
+            color: #333;
+            margin: 10px 0 5px;
+        }
+        .dac-diem .dac-diem-item p {
+            color: #666;
+            margin: 0;
+        }
+
+    </style>
+ 
+</head>
+<body>
+   
+    <header>
+        <nav>
+            <ul>
+                <a><img src="https://ibrand.vn/wp-content/uploads/2022/10/logo-shop-giay-8.jpg" id="img1"></a>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="http://127.0.0.1:5500/js/websanpham.html">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+                <li><a href="http://127.0.0.1:5500/js/webchinhsach.html">Chính sách bảo hành</a></li>
+                <li><a href="http://127.0.0.1:5500/js/webgiohang.html"  ><i class='bx bx-cart' id="icon1"  style="font-size:30px"></i></a></li>
+                <li>
+                    <div class="search-container">
+                      <input type="text" id="search" placeholder="Tìm kiếm sản phẩm" required style="width:150px;">
+                      <span class="search-icon" id="search-icon"><i class='bx bx-search-alt-2' id="icon3"style="font-size:30px"></i></span>
+                    </div>
+                    </li>
+                    <div class="results" id="results"></div>
+                <li><div id="accountInfo" style="margin-left:5px">
+                <i class='bx bx-user-circle' id="icon2"style="font-size:30px;" onclick="myfunctionxx()" ></i>
+                    <div id="userInfo" >
+                        <!-- Thông tin người dùng sẽ được hiển thị ở đây -->
+                      
+                    </div>
+                </div>
+                </li>
+            
+            </ul>
+        </nav>
+    </header>
+    <div class="khung-main">
+    <div class="khung">
+        <div class="anh">
+            <img src="anh1.png" alt="Ảnh 1">
+            <img src="anh2.png" alt="Ảnh 2">
+            <img src="anh3.png" alt="Ảnh 3">
+        </div>
+    </div>
+    <div class="khung1">
+        <img src="anh4.png">
+    </div>
+    <div class="khung2">
+        <img src="backtrangchu.png">
+    </div>
+    </div>
+    
+    <div id="text1">
+        <h1 style="font-family: Playwrite NO, cursive;">Khám phá bộ sưu tập giày thể thao mới nhất của chúng tôi, kết hợp giữa công nghệ hiện đại và phong cách đỉnh cao.<br> Mỗi đôi giày của Nike đều được thiết kế để mang đến cho bạn sự thoải mái, hiệu suất và phong cách vượt trội.</h1>
+    </div>
+    <div class="shoe-container">
+        <div class="shoe">
+            <img src="https://sneakerdaily.vn/wp-content/uploads/2021/07/Giay-Air-Jordan-6-Rings-Tropical-Twist-GS-323419-115.jpg.webp" alt="Giày thể thao nam YZ700">
+            <h3>Giày Air Jordan 6 Rings ‘Tropical Twist’ (GS) 323419-115</h3>
+            <h4>3,349,000đ</h4>
+            <button id='click_button' class="buy-button">Mua ngay</button>
+        </div>
+        <div class="shoe">
+            <img src="https://sneakerdaily.vn/wp-content/uploads/2021/11/Giay-Nike-NBA-x-Dunk-Low-EMB-GS-75th-Anniversary-Bulls-DO6288-100-1.jpg.webp" alt="Giày thể thao nam YZ700">
+            <h3>Giày (WMNS) Air Jordan 6 Retro GORE-TEX ‘Brown Kelp’ FD1643-300</h3>
+            <h4>6,790,000đ</h4>
+            <button id="button1" class="buy-button">Mua ngay</button>
+        </div>
+        <div class="shoe">
+            <img src="https://sneakerdaily.vn/wp-content/uploads/2022/04/Giay-Nike-Dunk-Low-EMB-NBA-75th-Anniversary-Chicago-DD3363-100.jpg.webp" alt="Giày thể thao nam YZ700">
+            <h3>Giày Nike Dunk Low EMB ‘NBA 75th Anniversary Chicago’ DD3363-100</h3>
+            <h4>3,349,000đ</h4>
+            <button  id="button2" class="buy-button">Mua ngay</button>
+        </div>
+        <div class="shoe">
+            <img src="https://sneakerdaily.vn/wp-content/uploads/2022/06/giay-converse-run-star-hi-black-166800c.jpg.webp" alt="Giày thể thao nam YZ700">
+            <h3>Giày Converse Run Star Hi ‘Black’ 166800C</h3>
+            <h4>2,649,000đ</h4>
+            <button id="button3" class="buy-button">Mua ngay</button>
+        </div>
+    </div>
+    <div class="click">
+        <button id="change1" style="border-radius:15px">Xem tất cả</button>
+    </div>
+    <div id="more-shoes" style="display: none;">
+       
+        <div class="shoe" style="float:left;box-sizing:border-box;margin-left:85px">
+            <img src="https://sneakerdaily.vn/wp-content/uploads/2021/05/nike-air-force-1-id-gucci-ct7875-994.png.webp" alt="Giày thể thao nam YZ700">
+            <h3> Giày nam Nike Air Force 1 ID ‘Gucci’ CT7875-994</h3>
+            <h4>2,649,000đ</h4>
+            <button id="button4"   class="buy-button">Mua ngay</button>
+        </div>
+        <div class="shoe" style="float:left;box-sizing:border-box">
+            <img src="https://sneakerdaily.vn/wp-content/uploads/2021/03/Giay-nam-Nike-Air-Force-1-Low-Popcorn-CW2919-100.jpg.webp" alt="Giày thể thao nam YZ700">
+            <h3>Giày nam Nike Air Force 1 Low ‘Under Construction – White’ BQ4421-100</h3>
+            <h4>2,300,000đ</h4>
+            <button id="button5 "class="buy-button"onclick="myfunction()">Mua ngay</button>
+        </div>
+        <div class="shoe" style="float:left;box-sizing:border-box">
+            <img src="https://sneakerdaily.vn/wp-content/uploads/2023/11/giay-adidas-alphabounce-ek-white-gw2265.jpg.webp" alt="Giày thể thao nam YZ700">
+            <h3>Giày adidas Alphabounce Ek ‘Triple Black’ GY5403</h3>
+            <h4>2,100,000đ</h4>
+            <button id="button6 "class="buy-button" onclick="myfunction1()">Mua ngay</button>
+        </div>
+        <div class="shoe" style="float:left;box-sizing:border-box">
+            <img src="https://sneakerdaily.vn/wp-content/uploads/2023/10/Giay-Adidas-Alphabounce-Plus-Black-Carbon-HP6142.jpg.webp" alt="Giày thể thao nam YZ700">
+            <h3>Giày adidas Alphabounce Ek ‘Black/Orange’ GW2267</h3>
+            <h4>3,290,000đ</h4>
+            <button id="button7 "class="buy-button" onclick="myfunction2()">Mua ngay </button>
+        </div>
+        <div class="shoe" style="float:left;box-sizing:border-box">
+            <img src="https://sneakerdaily.vn/wp-content/uploads/2024/04/Giay-adidas-Samba-Og-Core-Black-IH3119-1.jpg" alt="Giày thể thao nam YZ700">
+            <h3>Giày adidas Samba Og ‘Core Black’ IH3119</h3>
+            <h4>1,590,000đ</h4>
+            <button id="button8" class="buy-button"onclick="myfunction3()">Mua ngay</button>
+        </div>
+        <div class="shoe" style="float:left;box-sizing:border-box;margin-left:80px">
+            <img src="https://sneakerdaily.vn/wp-content/uploads/2022/08/Giay-Nike-Air-Jordan-1-Retro-High-OG-Denim-DM9036-104.jpg.webp" alt="Giày thể thao nam YZ700">
+            <h3>Giày Nike Air Jordan 1 Retro High OG ‘Heritage’ 555088-161</h3>
+            <h4>2,350,000đ</h4>
+            <button id="button9"class="buy-button" onclick="myfunction4()">Mua ngay</button>
+        </div>
+        <div class="shoe" style="float:left;box-sizing:border-box">
+            <img src="https://sneakerdaily.vn/wp-content/uploads/2023/03/giay-adidas-forum-exhibit-low-2-0-kream-id1849.jpg.webp" alt="Giày thể thao nam YZ700">
+            <h3>Giày adidas Forum Exhibit Low 2.0 ‘Kream’ ID1849</h3>
+            <h4>1,849,000đ</h4>
+            <button id="button10" class="buy-button"onclick="myfunction5()">Mua ngay</button>
+        </div>
+        <div class="shoe" style="float:left;box-sizing:border-box">
+            <img src="https://sneakerdaily.vn/wp-content/uploads/2022/11/Giay-adidas-Forum-Exhibit-Low-%E2%80%98Sky-Tint-GW6348.jpg.webp" alt="Giày thể thao nam YZ700">
+            <h3>Giày adidas Forum Exhibit Low ‘Sky Tint’ GW6348</h3>
+            <h4>3,290,000đ</h4>
+            <button id="button11"class="buy-button"onclick="myfunction6()">Mua ngay</button>
+        </div>
+        <div class="shoe" style="float:left;box-sizing:border-box;">
+            <img src="https://sneakerdaily.vn/wp-content/uploads/2022/09/Giay-adidas-Forum-Low-Trang-Den-FY7757.jpg.webp" alt="Giày thể thao nam YZ700">
+            <h3>Giày adidas Forum Low Trắng Đen FY7757</h3>
+            <h4>2,790,000đ</h4>
+            <button id="button12" class="buy-button" onclick="myfunction7()" >Mua ngay</button>
+        </div>
+        <div class="shoe" style="float:left;box-sizing:border-box">
+            <img src="https://sneakerdaily.vn/wp-content/uploads/2022/09/Giay-adidas-Forum-Low-Off-White-Magic-Beige-HQ1492.jpg.webp" alt="Giày thể thao nam YZ700">
+            <h3>Giày adidas Forum Low Off White Magic Beige HQ1492</h3>
+            <h4>2,990,000đ</h4>
+            <button id="button13"class="buy-button" onclick="myfunction8()">Mua ngay</button>
+        </div>
+    </div>
+    <div class="dac-diem">
+        <div class="dac-diem-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/free-shipping.png" alt="Miễn phí vận chuyển">
+            <h3>SHIP COD TOÀN QUỐC</h3>
+            <p>Miễn phí vận chuyển toàn quốc cho đơn hàng từ 999.000 đ.</p>
+        </div>
+        <div class="dac-diem-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/guarantee.png" alt="Chất lượng đảm bảo">
+            <h3>CHẤT LƯỢNG TUYỆT ĐỐI 100%</h3>
+            <p>Cam kết sản phẩm chính hãng đến từ Converse, Vans, Palladium và Supra.</p>
+        </div>
+        <div class="dac-diem-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/easy.png" alt="Thanh toán dễ dàng">
+            <h3>THANH TOÁN DỄ DÀNG</h3>
+            <p>Phương thức thanh toán đa dạng và cực kì tiện lợi.</p>
+        </div>
+        <div class="dac-diem-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/time.png" alt="Tiết kiệm thời gian">
+            <h3>TIẾT KIỆM THỜI GIAN</h3>
+            <p>Mua sắm dễ hơn khi Online.</p>
+        </div>
+    </div>
+    <div class="about-us" id="about">
+        <h1 style="font-family: Playwrite NO, cursive;">Về chúng tôi</h1>
+        <div class="container">
+            <div id="nhap1">
+                <h3 style="font-family: Playwrite NO, cursive;">Cơ sở 1: 122 Hoàng Quốc Việt,Quận Cầu Giấy</h3>
+                <h3 style="font-family: Playwrite NO, cursive;">Cơ sở 2: Km10 Nguyễn Trãi,Hà Đông</h3>
+            </div>
+            <div id="nhap2">
+                <h2 style="font-family: Playwrite NO, cursive;">Hướng dẫn</h2>
+                <a href="#">Đăng kí thành viên</a><br>
+                <a href="#">Tra cứu đơn hàng</a>
+            </div>
+            <div id="nhap3">
+                <h3 style="font-family: Playwrite NO, cursive;">Chính sách bảo hành</h3>
+                       <a href="http://127.0.0.1:5500/js/webchinhsach.html">Chính sách đổi hàng</a><br>
+                        <a href="http://127.0.0.1:5500/js/webtracuu.html">Theo dõi sản phẩm</a><br>
+                        <a href="http://127.0.0.1:5500/js/webchinhsach.html">Chính sách thanh toán</a>              
+            </div>
+            <div class="newsletter">
+                <h2 style="font-family: Playwrite NO, cursive;">Đăng ký nhận thông tin mới nhất</h2>
+                <p>Nhận thông tin sản phẩm mới nhất, tin khuyến mãi và nhiều hơn nữa.</p>
+                <form class="newsletter-form" action="/submit-form" method="POST">
+                    <label for="email">Email của bạn:</label>
+                    <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required><br>
+                    <button type="submit">Đăng ký</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="contact" id="contact">
+        <h2 style="font-family: Playwrite NO, cursive;font-size:30px">Liên hệ</h2>
+        <p>Nếu bạn có bất kỳ câu hỏi nào, hãy liên hệ với chúng tôi qua mẫu dưới đây.</p>
+        <form class="contact-form" action="/contact-form" method="POST">
+            <input type="text" name="name" placeholder="Tên của bạn" required>
+            <input type="email" name="email" placeholder="Email của bạn" required>
+            <textarea name="message" rows="5" placeholder="Tin nhắn của bạn" required></textarea>
+            <button type="submit">Gửi</button>
+        </form>
+    </div>
+    <div class="button-container">
+        <div class="button" id="messengerButton"></div>
+        <div class="button" id="zaloButton"></div>
+    </div>
+    
+   <script src="trangchu.js" ></script>
+   <script src="trangchu1.js" ></script>
+  
+</body>
+</html>
+

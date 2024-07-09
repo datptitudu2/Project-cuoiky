@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang thông tin</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        #icon3 {
+            font-size:30px
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top:250px;
+            display: flex;
+            flex-direction: column;
+        }
+        .profile-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Align items to the top */
+        }
+        .profile-details {
+            width: 48%; /* Adjust width of profile details */
+        }
+        .profile-picture {
+            width: 48%; /* Adjust width of profile picture */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center items horizontally */
+        }
+        .profile-picture .file-preview {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            margin-top: 10px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .profile-picture .file-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group input[type="radio"] {
+            width: auto;
+        }
+        .save-button {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .save-button:hover {
+            background-color: #c0392b;
+        }
+        .gender-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .gender-option {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+        .date-select {
+            display: flex;
+            justify-content: space-between;
+        }
+        .date-select select {
+            width: calc(30% - 10px);
+            /* Adjust width of each select box */
+        }
+
+
+        header {
+            background-color: rgb(233,150,122);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+         
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            color:black;
+            text-decoration: none;
+            padding-bottom:30px;
+            padding-right:60px;
+            font-size:30px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        nav ul li a:hover {
+            cursor:pointer;
+            color:white
+        }
+        #img1 {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-right: 60px; /* Thêm khoảng cách bên phải cho hình ảnh */
+            vertical-align: middle; /* Căn giữa hình ảnh với các liên kết */
+        }
+
+        #img1:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-us a {
+            display: block;
+            margin-bottom: 10px; /* Điều chỉnh khoảng cách giữa các dòng */
+            text-decoration: none; /* Loại bỏ gạch chân của liên kết nếu muốn */
+        }
+        .about-us {
+            background-color:	rgb(248,248,255);
+            padding: 10px 20px;
+            text-align: center;
+            margin-top:200px;
+            height:500px
+        }
+        .about-us h2 {
+            margin-bottom: 20px;
+        }
+        .container2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            font-size:18px
+        }
+        #nhap1, #nhap2, #nhap3, .newsletter {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .newsletter {
+            text-align: center;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .newsletter-form label {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .newsletter-form input {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .newsletter-form button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #218838;
+        }
+
+       
+        #nhap2 a, #nhap3 a {
+            text-decoration: none;
+            color: #000;
+            transition: color 0.3s ease;
+        }
+
+        #nhap2 a:hover, #nhap3 a:hover {
+            color: #ca2b07f4;
+        }
+        .button {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 400px;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .button-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #messengerButton {
+            border-radius: 50%;
+            background-image: url('https://banghieuminhkhang.com/upload/Thu-vien/logo-facebook-vector-11.jpg');
+            margin-bottom:40px
+        }
+           
+        #zaloButton {
+            border-radius:50%;
+            background-image:url('https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-App-Rec.png');
+         
+            
+        }
+        #icon1 i, #icon2 i {
+            font-size: 24px;
+            
+        }
+
+
+
+        .search-container {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-left: -30px;
+            border-radius: 5px;
+        }
+
+        .search-container input {
+            width: 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            font-size: 16px;
+            transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            
+            background-color:white;
+            border:1px solid black
+        }
+
+       
+
+        .search-icon {
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        .results {
+            position: absolute;
+            top: calc(100% + 5px);
+            width: 170px;
+            margin-left:1730px;
+            margin-top:-48px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+           
+        }
+
+        .results.active {
+            display: block;
+          
+            
+        }
+
+        .result-item {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .result-item:hover {
+            background-color: #f0f0f0;
+        }
+      
+    
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a><img src="https://ibrand.vn/wp-content/uploads/2022/10/logo-shop-giay-8.jpg" id="img1"></a>
+                <li><a href="http://127.0.0.1:5500/js/trangchuweb.html">Trang chủ</a></li>
+                <li><a href="http://127.0.0.1:5500/js/websanpham.html">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+                <li><a href="http://127.0.0.1:5500/js/webchinhsach.html">Chính sách và bảo hành</a></li>
+                <li><a href="http://127.0.0.1:5500/js/webgiohang.html"  ><i class='bx bx-cart' id="icon1"  style="font-size:30px"></i></a></li>
+                <li>
+                    <div class="search-container">
+                      <input type="text" id="search" placeholder="Tìm kiếm sản phẩm" required style="width:150px;">
+                      <span class="search-icon" id="search-icon"><i class='bx bx-search-alt-2' id="icon3"style="font-size:30px"></i></span>
+                    </div>
+                    </li>
+                    <div class="results" id="results"></div>
+                    
+            </ul>
+        </nav>
+    </header>
+    
+<div class="container">
+    <div class="profile-content">
+        <div class="profile-details">
+            <h2>Hồ Sơ Của Tôi</h2>
+            <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+            <form id="profileForm">
+                <div class="form-group">
+                    <label for="name">Tên</label>
+                    <input type="text" id="name" name="name" placeholder="Nhập tên của bạn">
+                </div>
+                <div class="form-group">
+                    <label for="sdtHoacEmail">Số điện thoại hoặc Email</label>
+                    <input type="text" id="sdtHoacEmail" name="sdtHoacEmail">
+                </div>
+                <div class="form-group gender-container">
+                    <label>Giới tính</label>
+                    <div class="gender-option">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Nam</label>
+                    </div>
+                    <div class="gender-option">
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Nữ</label>
+                    </div>
+                    <div class="gender-option">
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Khác</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="birthday">Ngày sinh</label>
+                    <div class="date-select">
+                        <select id="day" name="day"></select>
+                        <select id="month" name="month"></select>
+                        <select id="year" name="year"></select>
+                    </div>
+                </div>
+                <button type="submit" class="save-button">Lưu</button>
+            </form>
+        </div>
+        <div class="profile-picture">
+            <div class="form-group">
+                <input type="file" id="profile-picture" name="profile-picture" accept="image/jpeg, image/png">
+                <div class="file-preview" id="filePreview">
+                    <img id="previewImg" src="" alt="Ảnh đại diện">
+                </div>
+                <p class="file-info">Dung lượng file tối đa 1 MB<br>Định dạng: .JPEG, .PNG</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="about-us" id="about">
+    <h1 style="font-family: Playwrite NO, cursive;font-size:30px">Về chúng tôi</h1>
+    <div class="container2">
+        <div id="nhap1">
+            <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Cơ sở 1: 122 Hoàng Quốc Việt</h3>
+            <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Cơ sở 2: km10 Nguyễn Trãi</h3>
+        </div>
+        <div id="nhap2">
+            <h2 style="font-family: Playwrite NO, cursive;font-size:20px">Hướng dẫn</h2>
+            <a href="#">Hướng dẫn mua hàng</a><br>
+            <a href="#">Giao nhận và thanh toán</a><br>
+            <a href="#">Đổi trả và bảo hành</a><br>
+            <a href="#">Đăng kí thành viên</a><br>
+            <a href="#">Tra cứu đơn hàng</a>
+        </div>
+        <div id="nhap3">
+            <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Chính sách bảo hành</h3>
+
+                   <a href="#">Chính sách đổi hàng</a><br>
+                    <a href="#">Theo dõi sản phẩm</a><br>
+                    <a href="#">Chính sách thanh toán</a>
+                    
+        </div>
+        <div class="newsletter">
+            <h2 style="font-family: Playwrite NO, cursive;font-size:20px">Đăng ký nhận thông tin mới nhất</h2>
+            <p>Nhận thông tin sản phẩm mới nhất, tin khuyến mãi và nhiều hơn nữa.</p>
+            <form class="newsletter-form" action="/submit-form" method="POST">
+                <label for="email">Email của bạn:</label>
+                <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required><br>
+                <button type="submit">Đăng ký</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="button-container">
+    <div class="button" id="messengerButton"></div>
+    <div class="button" id="zaloButton"></div>
+</div>
+<script>
+     document.getElementById('zaloButton').addEventListener('click', function() {
+    window.location.href = 'https://zalo.me/g/rrjgou055'; })
+    document.getElementById('messengerButton').addEventListener('click', function() {
+        window.location.href = 'https://www.facebook.com/dattkdz/about'; })
+     
+// lưu ý cái này là thông tin tài khoản//
+document.addEventListener('DOMContentLoaded', function() {
+    const storedUserInfo = localStorage.getItem('userInfo');
+    const userInfo = storedUserInfo ? JSON.parse(storedUserInfo) : null;
+    const userInfoDiv = document.getElementById('userInfo');
+
+    if (userInfo && userInfo.ten) {
+        // Nếu đã đăng nhập
+        userInfoDiv.innerHTML = `<p style="padding-left:40px">Xin chào, ${userInfo.ten}</p><a href="#" onclick="logout()">Đăng xuất</a>`;
+    } else {
+        // Nếu chưa đăng nhập
+        userInfoDiv.innerHTML = `
+            <a href="http://127.0.0.1:5500/js/login.html">Đăng nhập</a>
+            <a href="http://127.0.0.1:5500/js/dangky.html">Đăng ký</a>
+        `;
+    }
+});
+
+function logout() {
+    localStorage.removeItem('userInfo'); // Xóa thông tin người dùng khi đăng xuất
+    window.location.href = 'http://127.0.0.1:5500/js/login.html'; // Chuyển hướng về trang đăng nhập
+}
+
+
+    document.getElementById('zaloButton').addEventListener('click', function() {
+window.location.href = 'https://zalo.me/g/rrjgou055'; })
+document.getElementById('messengerButton').addEventListener('click', function() {
+    window.location.href = 'https://www.facebook.com/dattkdz/about'; })
+
+    // Function to load user data from localStorage
+    function loadUserData() {
+        const userInfo = JSON.parse(localStorage.getItem('userInfo')) || {};
+        document.getElementById('name').value = userInfo.ten || '';
+        document.getElementById('sdtHoacEmail').value = userInfo.sdtHoacEmail || '';
+        if (userInfo.gender) {
+            document.querySelector(`input[name="gender"][value="${userInfo.gender}"]`).checked = true;
+        }
+        if (userInfo.day) {
+            document.getElementById('day').value = userInfo.day;
+        }
+        if (userInfo.month) {
+            document.getElementById('month').value = userInfo.month;
+        }
+        if (userInfo.year) {
+            document.getElementById('year').value = userInfo.year;
+        }
+        if (userInfo.profilePicture) {
+            document.getElementById('previewImg').src = userInfo.profilePicture;
+        }
+    }
+
+    
+    function saveUserData(event) {
+        event.preventDefault();
+        const userInfo = {
+            ten: document.getElementById('name').value,
+            sdtHoacEmail: document.getElementById('sdtHoacEmail').value,
+            gender: document.querySelector('input[name="gender"]:checked').value,
+            day: document.getElementById('day').value,
+            month: document.getElementById('month').value,
+            year: document.getElementById('year').value,
+            profilePicture: document.getElementById('previewImg').src
+        };
+        localStorage.setItem('userInfo', JSON.stringify(userInfo));
+        alert('Thông tin của bạn đã được lưu.');
+    }
+
+    // Function to handle file input change
+    function QuanLyThayDoiTapTin(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('previewImg').src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    if(!localStorage.getItem('sanpham')) {
+    const sanpham = ['Giày Air Jordan 6 Rings ‘Tropical Twist’ (GS) 323419-115',
+       'Giày (WMNS) Air Jordan 6 Retro GORE-TEX ‘Brown Kelp’ FD1643-300',
+        'Giày Converse Run Star Hi ‘Black’ 166800C', 
+        'Giày Nike Dunk Low EMB ‘NBA 75th Anniversary Chicago’ DD3363-100',
+      'Giày nam Nike Air Force 1 ID ‘Gucci’ CT7875-994',
+      'Giày nam Nike Air Force 1 Low ‘Under Construction – White’ BQ4421-100',
+    'Giày Nike Air Jordan 1 Retro High OG ‘Heritage’ 555088-161',
+    'Giày adidas Alphabounce Ek ‘Triple Black’ GY5403',
+    'Giày adidas Alphabounce Ek ‘Black/Orange’ GW2267',
+    'Giày adidas Samba Og ‘Core Black’ IH3119',
+    'Giày adidas Forum Exhibit Low Off White Shadow Navy GX4121',
+    'Giày adidas Forum Low ‘Black White’ HQ1494',
+    'Giày adidas Forum Exhibit Low ‘Chalky Brown’ GW6347',
+    'Giày Home Alone x adidas Forum Low ‘White Red’ GZ4378',
+    'Giày adidas Forum Low ‘Royal Blue’ FY7974',
+    'Giày adidas Forum Exhibit Low 2.0 ‘Kream’ ID1849',
+    'Giày adidas Forum Exhibit Low ‘Sky Tint’ GW6348',
+    'Giày adidas Forum Low Trắng Đen FY7757',
+    'Giày adidas Forum Low Off White Magic Beige HQ1492',
+    'Giày adidas Forum Low ‘White Iridescent’ GX5061'];
+    localStorage.setItem('sanpham', JSON.stringify(sanpham));
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById('search');
+    const searchIcon = document.getElementById('search-icon');
+    const resultsContainer = document.getElementById('results');
+  
+    searchIcon.addEventListener('click', function() {
+      // Hiển thị hoặc ẩn thanh tìm kiếm
+      if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+        searchInput.style.display = 'block';
+        searchInput.focus();
+      } else {
+        searchInput.style.display = 'none';
+        resultsContainer.style.display = 'none';
+      }
+    });
+  
+    searchInput.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      const sanpham = JSON.parse(localStorage.getItem('sanpham'));
+      const filteredSanpham = sanpham.filter(product => product.toLowerCase().includes(query));
+  
+      // Hiển thị kết quả tìm kiếm
+      resultsContainer.innerHTML = '';
+      filteredSanpham.forEach(product => {
+        const div = document.createElement('div');
+        div.classList.add('result-item');
+        div.textContent = product;
+        resultsContainer.appendChild(div);
+      });
+  
+      resultsContainer.style.display = filteredSanpham.length > 0 ? 'block' : 'none';
+  
+      // Xử lý sự kiện click vào kết quả tìm kiếm
+      const resultItems = document.querySelectorAll('.result-item');
+      resultItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const productName = this.textContent;
+          const productURL = generateProductURL(productName); // Chuyển hướng đến trang web của sản phẩm
+          window.location.href = productURL;
+          resultsContainer.style.display = 'none';
+        });
+      });
+    });
+  
+    // Đóng kết quả tìm kiếm khi click bên ngoài
+    document.addEventListener('click', function(event) {
+      if (!searchIcon.contains(event.target) && !resultsContainer.contains(event.target) && !searchInput.contains(event.target)) {
+        resultsContainer.style.display = 'none';
+        searchInput.style.display = 'none';
+      }
+    });
+  
+    // Hàm sinh URL dựa vào tên sản phẩm
+    function generateProductURL(productName) {
+
+      switch (productName) {
+        case 'Giày Air Jordan 6 Rings ‘Tropical Twist’ (GS) 323419-115':
+          return 'http://127.0.0.1:5500/js/web001.html';
+        case 'Giày (WMNS) Air Jordan 6 Retro GORE-TEX ‘Brown Kelp’ FD1643-300':
+          return 'http://127.0.0.1:5500/js/web02.html';
+        case 'Giày Nike Dunk Low EMB ‘NBA 75th Anniversary Chicago’ DD3363-100':
+            return 'http://127.0.0.1:5500/js/web3.html';
+          case 'Giày Converse Run Star Hi ‘Black’ 166800C':
+            return 'http://127.0.0.1:5500/js/web4.html';
+    
+          case 'Giày nam Nike Air Force 1 ID ‘Gucci’ CT7875-994':
+            return 'http://127.0.0.1:5500/js/web5.html';
+          
+            case 'Giày nam Nike Air Force 1 Low ‘Under Construction – White’ BQ4421-100':
+            return 'http://127.0.0.1:5500/js/web6.html'
+          case 'Giày Nike Air Jordan 1 Retro High OG ‘Heritage’ 555088-161':
+            return 'http://127.0.0.1:5500/js/web7.html';
+          case 'Giày adidas Alphabounce Ek ‘Triple Black’ GY5403':
+            return 'http://127.0.0.1:5500/js/web8.html';
+
+          case 'Giày adidas Alphabounce Ek ‘Black/Orange’ GW2267':
+            return 'http://127.0.0.1:5500/js/web9.html';
+            
+            case 'Giàyadidas Samba Og ‘Core Black’ IH3119':
+            return 'http://127.0.0.1:5500/js/web10.html';
+            case 'Giày adidas Forum Exhibit Low Off White Shadow Navy GX4121':
+            return 'http://127.0.0.1:5500/js/web11.html';
+            
+            case 'Giày adidas Forum Low ‘Black White’ HQ1494':
+            return 'http://127.0.0.1:5500/js/web12.html';
+            case 'Giày adidas Forum Exhibit Low ‘Chalky Brown’ GW6347':
+            return 'http://127.0.0.1:5500/js/web13.html';
+            case 'Giày Home Alone x adidas Forum Low ‘White Red’ GZ4378<':
+            return 'http://127.0.0.1:5500/js/web14.html';
+            case 'Giày adidas Forum Low ‘Royal Blue’ FY7974':
+            return 'http://127.0.0.1:5500/js/web15.html';
+            case 'Giày adidas Forum Exhibit Low 2.0 ‘Kream’ ID1849':
+            return 'http://127.0.0.1:5500/js/web16.html';
+            case 'Giày adidas Forum Exhibit Low ‘Sky Tint’ GW6348':
+            return 'http://127.0.0.1:5500/js/web17.html';
+            case 'Giày adidas Forum Low Trắng Đen FY7757':
+            return 'http://127.0.0.1:5500/js/web18.html';
+            case 'Giày adidas Forum Low Off White Magic Beige HQ1492':
+            return 'http://127.0.0.1:5500/js/web19.html';
+            case 'Giày adidas Forum Low ‘White Iridescent’ GX5061':
+            return 'http://127.0.0.1:5500/js/web20.html';
+            
+        default:
+          return 'http://127.0.0.1:5500/js/trangchu.html'; // URL mặc định hoặc xử lý khi không có sản phẩm nào phù hợp
+      }
+    }
+  });
+  
+
+
+
+
+
+
+
+    function ThietLapNgayThang() {
+        const daySelect = document.getElementById('day');
+        const monthSelect = document.getElementById('month');
+        const yearSelect = document.getElementById('year');
+
+      
+        for (let i = 1; i <= 30; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            daySelect.appendChild(option);
+        }
+
+     
+        for (let i = 1; i <= 12; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = `Tháng ${i}`;
+            monthSelect.appendChild(option);
+        }
+
+     
+        for (let i = 1990; i <= 2005; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            yearSelect.appendChild(option);
+        }
+    }
+
+    
+    document.getElementById('profileForm').addEventListener('submit', saveUserData);
+
+   
+    document.getElementById('profile-picture').addEventListener('change', QuanLyThayDoiTapTin);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadUserData();
+        ThietLapNgayThang();
+    });
+</script>
+
+</body>
+</html>

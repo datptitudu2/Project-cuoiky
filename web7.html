@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web sp7</title>
+    <link rel="stylesheet" href="web1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .tab-container {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+            
+            
+        }
+        .tab,.tab-active {
+            font-size:25px
+        }
+        .tab {
+            margin-right: 20px;
+            padding-bottom: 5px;
+            cursor: pointer;
+        }
+        .tab.active {
+            border-bottom: 2px solid black;
+        }
+        .tab-content {
+            display: none;
+            font-size:20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .tab-content.active {
+            display: block;
+            margin-top:70px;
+            font-size:20px;
+            font-family:Arial, Helvetica, sans-serif
+        }
+        .lastend {
+            margin-top:140px;
+            margin-left:50px
+        }
+        #icon1 i, #icon2 i {
+            font-size: 24px;
+            
+        }
+
+
+        
+        .search-container {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-left: -30px;
+            border-radius: 5px;
+        }
+
+        .search-container input {
+            width: 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            font-size: 16px;
+            transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            
+            background-color:white;
+            border:1px solid black
+        }
+
+       
+
+        .search-icon {
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        .results {
+            position: absolute;
+            top: calc(100% + 5px);
+            width: 170px;
+            margin-left:1625px;
+            margin-top:-48px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+           
+        }
+
+        .results.active {
+            display: block;
+          
+            
+        }
+
+        .result-item {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .result-item:hover {
+            background-color: #f0f0f0;
+        }
+        #accountInfo {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    #userInfo {
+        display: none;
+        position: absolute;
+        margin-left:40px;
+        background-color: #f9f9f9;
+        width: 153px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        
+        
+    }
+
+    #accountInfo:hover #userInfo {
+        display: block;
+    }
+    #userInfo a {
+        color: black;
+        padding: 12px 16px;
+        width:120px;
+        text-decoration: none;
+        display: block;
+        font-size:15px
+    }
+
+    #userInfo a:hover {
+        background-color: #f1f1f1;
+        color:#CC9966
+    }
+
+
+    #icon2 {
+        font-size: 30px;
+        color: #000;
+        margin-left:50px
+    }
+        </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a><img src="https://ibrand.vn/wp-content/uploads/2022/10/logo-shop-giay-8.jpg" id="img1"></a>
+                <li><a href="http://127.0.0.1:5500/js/trangchuweb.html">Trang chủ</a></li>
+                <li><a href="http://127.0.0.1:5500/js/websanpham.html">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+                <li><a href="http://127.0.0.1:5500/js/webchinhsach.html">Chính sách bảo hành</a></li>
+                <li><a href="http://127.0.0.1:5500/js/webgiohang.html"  ><i class='bx bx-cart' id="icon1"  style="font-size:30px"></i></a></li>
+                <li>
+                    <div class="search-container">
+                      <input type="text" id="search" placeholder="Tìm kiếm sản phẩm" required style="width:150px;">
+                      <span class="search-icon" id="search-icon"><i class='bx bx-search-alt-2' id="icon3"style="font-size:30px"></i></span>
+                    </div>
+                    </li>
+                    <div class="results" id="results"></div>
+                    <li><div id="accountInfo" style="margin-left:5px">
+                        <i class='bx bx-user-circle' id="icon2"style="font-size:30px;"  onclick="myfunctionxx()"></i>
+                            <div id="userInfo" >
+                                <!-- Thông tin người dùng sẽ được hiển thị ở đây -->
+                              
+                            </div>
+                        </div>
+                        </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="slider">
+            <div class="slides">
+                <img src="https://sneakerdaily.vn/wp-content/uploads/2022/08/Giay-Nike-Air-Jordan-1-Retro-High-OG-Denim-DM9036-104.jpg.webp" alt="Image 1" class="active">
+                <img src="https://sneakerdaily.vn/wp-content/uploads/2022/08/giay-nike-air-jordan-1-retro-high-og-denim-dm9036-104-6.png.webp" alt="Image 2">
+                <img src="https://sneakerdaily.vn/wp-content/uploads/2022/08/giay-nike-air-jordan-1-retro-high-og-denim-dm9036-104-7.png.webp" alt="Image 3">
+            </div>
+            <div class="navigation">
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </div>
+        <div id="change1">
+            <p id="product-name" style="font-family: Playwrite NO, cursive;font-size:28px">Giày Nike Air Jordan 1 Retro High OG ‘Heritage’ 555088-161
+            </p>
+            <p id="product-price">2350000đ</p>
+            <div id="size-selector">
+                <p>Kích thước:</p>
+                <div class="size-options">
+                    <div class="size-option" onclick="selectSize(35)">35</div>
+                    <div class="size-option" onclick="selectSize(36)">36</div>
+                    <div class="size-option" onclick="selectSize(37)">37</div>
+                    <div class="size-option" onclick="selectSize(38)">38</div>
+                    <div class="size-option" onclick="selectSize(39)">39</div>
+                    <div class="size-option" onclick="selectSize(40)">40</div>
+                    <div class="size-option" onclick="selectSize(41)">41</div>
+                    <div class="size-option" onclick="selectSize(42)">42</div>
+                    <div class="size-option" onclick="selectSize(43)">43</div>
+                </div>
+            </div>
+            <div class="main1">
+                <div class="tang_giam">
+                    <button id="giamso">-</button>
+                    <div class="hien_tai" id="sohientai">1</div>
+                    <button id="tangso">+</button>
+                </div>
+                <button  class="them-vao-gio" data-sanpham="Giày Nike Air Jordan 1 Retro High OG ‘Heritage’ 555088-161" data-gia="2350000" onclick="addToCart()">THÊM VÀO GIỎ</button>
+                <button class="button-buy" id="buy-now">MUA NGAY</button>
+            </div>
+            <div id="contact-info" class="contact-box"></div>
+        </div>
+    </div>
+
+    <div class="lastend">
+        <div class="tab-container">
+            <div class="tab active" data-tab="tab1">Thông Tin Sản Phẩm</div>
+            <div class="tab" data-tab="tab2">Thông tin bổ sung</div>
+        </div>
+        <div class="tab-content active" id="tab1">
+                <!-- Nội dung Thông Tin Sản Phẩm -->
+                Thông tin sản phẩm Giày Nike Air Jordan 1 Retro High OG ‘Heritage’:<br>
+                Nike Air Jordan 1 với lịch sử hơn 30 năm luôn được nhìn nhận như một trong<br> những dòng sản phẩm thành công nhất của Nike. Nike Jordan 1 luôn bán hết một cách nhanh chóng ngay từ khi ra mắt đến nay, luôn là sản phẩm được các tín đồ thời trang chú ý hàng đầu.<br> Air Jordan được đặt dựa theo ngôi sao bóng rổ lừng danh Michael Jordan – huyền thoại của NBA.
+                Thời gian ra mắt : 09/04/2022<br>
+                
+                Thương hiệu: Jordan<br>
+                
+                Thiết kế: Air Jordan 1<br>
+                
+                Mã sản phẩm: 555088-161 <br>
+                
+                Xuất xứ: Mỹ
+        </div>
+            <div class="tab-content" id="tab2">
+                
+            TRỌNG LƯỢNG	1 kg<br>
+            SIZE <br>	
+            36, 36.5, 37.5, 38, 38.5, 39, 40, 40.5, 41, 42, 42.5, 43, 44
+                
+            </div>
+              
+        </div>
+        <div id="phancuoi">
+            <div class="about-us" id="about">
+                <h1 style="font-family: Playwrite NO, cursive;font-size:30px">Về chúng tôi</h1>
+                <div class="container2">
+                    <div id="nhap1">
+                        <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Cơ sở 1: 122 Hoàng Quốc Việt</h3>
+                        <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Cơ sở 2: km10 Nguyễn Trãi</h3>
+                    </div>
+                    <div id="nhap2">
+                        <h2 style="font-family: Playwrite NO, cursive;font-size:20px">Hướng dẫn</h2>
+                        <a href="#">Hướng dẫn mua hàng</a><br>
+                        <a href="#">Giao nhận và thanh toán</a><br>
+                        <a href="#">Đổi trả và bảo hành</a><br>
+                        <a href="#">Đăng kí thành viên</a><br>
+                        <a href="#">Tra cứu đơn hàng</a>
+                    </div>
+                    <div id="nhap3">
+                        <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Chính sách bảo hành</h3>
+                        <a href="http://127.0.0.1:5500/js/webchinhsach.html#">Chính sách đổi hàng</a><br>
+                        <a href="http://127.0.0.1:5500/js/webtracuu.html">Theo dõi sản phẩm</a><br>
+                        <a href="http://127.0.0.1:5500/js/webchinhsach.html">Chính sách thanh toán</a>
+                    </div>
+                    <div class="newsletter">
+                        <h2 style="font-family: Playwrite NO, cursive;font-size:20px">Đăng ký nhận thông tin mới nhất</h2>
+                        <p>Nhận thông tin sản phẩm mới nhất, tin khuyến mãi và nhiều hơn nữa.</p>
+                        <form class="newsletter-form" action="/submit-form" method="POST">
+                            <label for="email">Email của bạn:</label>
+                            <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required><br>
+                            <button type="submit">Đăng ký</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="button-container">
+    <div class="button" id="messengerButton"></div>
+    <div class="button" id="zaloButton"></div>
+</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const storedUserInfo = localStorage.getItem('userInfo');
+    const userInfo = storedUserInfo ? JSON.parse(storedUserInfo) : null;
+    const userInfoDiv = document.getElementById('userInfo');
+
+    if (userInfo && userInfo.ten) {
+        // Nếu đã đăng nhập
+        userInfoDiv.innerHTML = `<p style="padding-left:40px">Xin chào, ${userInfo.ten}</p><a href="#" onclick="logout()">Đăng xuất</a>`;
+    } else {
+        // Nếu chưa đăng nhập
+        userInfoDiv.innerHTML = `
+            <a href="http://127.0.0.1:5500/js/login.html">Đăng nhập</a>
+            <a href="http://127.0.0.1:5500/js/dangky.html">Đăng ký</a>
+        `;
+    }
+});
+
+function logout() {
+    localStorage.removeItem('userInfo'); // Xóa thông tin người dùng khi đăng xuất
+    window.location.href = 'http://127.0.0.1:5500/js/login.html'; // Chuyển hướng về trang đăng nhập
+}
+ 
+function myfunctionxx(){
+        window.location.href='http://127.0.0.1:5500/js/trangthongtin.html';
+    }
+        document.getElementById('zaloButton').addEventListener('click', function() {
+    window.location.href = 'https://zalo.me/g/rrjgou055'; })
+    document.getElementById('messengerButton').addEventListener('click', function() {
+        window.location.href = 'https://www.facebook.com/dattkdz/about'; })
+         //
+         document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+        document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+        this.classList.add('active');
+        document.getElementById(this.getAttribute('data-tab')).classList.add('active');
+    });
+});
+if(!localStorage.getItem('sanpham')) {
+    const sanpham = ['Giày Air Jordan 6 Rings ‘Tropical Twist’ (GS) 323419-115',
+       'Giày (WMNS) Air Jordan 6 Retro GORE-TEX ‘Brown Kelp’ FD1643-300',
+        'Giày Converse Run Star Hi ‘Black’ 166800C', 
+        'Giày Nike Dunk Low EMB ‘NBA 75th Anniversary Chicago’ DD3363-100',
+      'Giày nam Nike Air Force 1 ID ‘Gucci’ CT7875-994',
+      'Giày nam Nike Air Force 1 Low ‘Under Construction – White’ BQ4421-100',
+    'Giày Nike Air Jordan 1 Retro High OG ‘Heritage’ 555088-161',
+    'Giày adidas Alphabounce Ek ‘Triple Black’ GY5403',
+    'Giày adidas Alphabounce Ek ‘Black/Orange’ GW2267',
+    'Giày adidas Samba Og ‘Core Black’ IH3119',
+    'Giày adidas Forum Exhibit Low Off White Shadow Navy GX4121',
+    'Giày adidas Forum Low ‘Black White’ HQ1494',
+    'Giày adidas Forum Exhibit Low ‘Chalky Brown’ GW6347',
+    'Giày Home Alone x adidas Forum Low ‘White Red’ GZ4378',
+    'Giày adidas Forum Low ‘Royal Blue’ FY7974',
+    'Giày adidas Forum Exhibit Low 2.0 ‘Kream’ ID1849',
+    'Giày adidas Forum Exhibit Low ‘Sky Tint’ GW6348',
+    'Giày adidas Forum Low Trắng Đen FY7757',
+    'Giày adidas Forum Low Off White Magic Beige HQ1492',
+    'Giày adidas Forum Low ‘White Iridescent’ GX5061'];
+    localStorage.setItem('sanpham', JSON.stringify(sanpham));
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById('search');
+    const searchIcon = document.getElementById('search-icon');
+    const resultsContainer = document.getElementById('results');
+  
+    searchIcon.addEventListener('click', function() {
+      // Hiển thị hoặc ẩn thanh tìm kiếm
+      if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+        searchInput.style.display = 'block';
+        searchInput.focus();
+      } else {
+        searchInput.style.display = 'none';
+        resultsContainer.style.display = 'none';
+      }
+    });
+  
+    searchInput.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      const sanpham = JSON.parse(localStorage.getItem('sanpham'));
+      const filteredSanpham = sanpham.filter(product => product.toLowerCase().includes(query));
+  
+      // Hiển thị kết quả tìm kiếm
+      resultsContainer.innerHTML = '';
+      filteredSanpham.forEach(product => {
+        const div = document.createElement('div');
+        div.classList.add('result-item');
+        div.textContent = product;
+        resultsContainer.appendChild(div);
+      });
+  
+      resultsContainer.style.display = filteredSanpham.length > 0 ? 'block' : 'none';
+  
+      // Xử lý sự kiện click vào kết quả tìm kiếm
+      const resultItems = document.querySelectorAll('.result-item');
+      resultItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const productName = this.textContent;
+          const productURL = generateProductURL(productName); // Chuyển hướng đến trang web của sản phẩm
+          window.location.href = productURL;
+          resultsContainer.style.display = 'none';
+        });
+      });
+    });
+  
+    // Đóng kết quả tìm kiếm khi click bên ngoài
+    document.addEventListener('click', function(event) {
+      if (!searchIcon.contains(event.target) && !resultsContainer.contains(event.target) && !searchInput.contains(event.target)) {
+        resultsContainer.style.display = 'none';
+        searchInput.style.display = 'none';
+      }
+    });
+  
+    // Hàm sinh URL dựa vào tên sản phẩm
+    function generateProductURL(productName) {
+      // Đây là một ví dụ đơn giản, bạn cần thay đổi phần này để phù hợp với cách bạn lưu trữ và xử lý sản phẩm
+      // Ví dụ, nếu bạn có một đối tượng JSON chứa thông tin sản phẩm và URL, bạn có thể lấy URL từ đối tượng đó.
+      switch (productName) {
+        case 'Giày Air Jordan 6 Rings ‘Tropical Twist’ (GS) 323419-115':
+          return 'http://127.0.0.1:5500/js/web001.html';
+        case 'Giày (WMNS) Air Jordan 6 Retro GORE-TEX ‘Brown Kelp’ FD1643-300':
+          return 'http://127.0.0.1:5500/js/web02.html';
+        // Thêm các sản phẩm khác tương tự
+        case 'Giày Nike Dunk Low EMB ‘NBA 75th Anniversary Chicago’ DD3363-100':
+            return 'http://127.0.0.1:5500/js/web3.html';
+          case 'Giày Converse Run Star Hi ‘Black’ 166800C':
+            return 'http://127.0.0.1:5500/js/web4.html';
+          // Thêm các sản phẩm khác tương tự
+          case 'Giày nam Nike Air Force 1 ID ‘Gucci’ CT7875-994':
+            return 'http://127.0.0.1:5500/js/web5.html';
+          
+            case 'Giày nam Nike Air Force 1 Low ‘Under Construction – White’ BQ4421-100':
+            return 'http://127.0.0.1:5500/js/web6.html';
+          // Thêm các sản phẩm khác tương tự
+         
+          case 'Giày Nike Air Jordan 1 Retro High OG ‘Heritage’ 555088-161':
+            return 'http://127.0.0.1:5500/js/web7.html';
+          case 'Giày adidas Alphabounce Ek ‘Triple Black’ GY5403':
+            return 'http://127.0.0.1:5500/js/web8.html';
+          // Thêm các sản phẩm khác tương tự
+          case 'Giày adidas Alphabounce Ek ‘Black/Orange’ GW2267':
+            return 'http://127.0.0.1:5500/js/web9.html';
+            
+            case 'Giàyadidas Samba Og ‘Core Black’ IH3119':
+            return 'http://127.0.0.1:5500/js/web10.html';
+            case 'Giày adidas Forum Exhibit Low Off White Shadow Navy GX4121':
+            return 'http://127.0.0.1:5500/js/web11.html';
+            
+            case 'Giày adidas Forum Low ‘Black White’ HQ1494':
+            return 'http://127.0.0.1:5500/js/web12.html';
+            case 'Giày adidas Forum Exhibit Low ‘Chalky Brown’ GW6347':
+            return 'http://127.0.0.1:5500/js/web13.html';
+            case 'Giày Home Alone x adidas Forum Low ‘White Red’ GZ4378<':
+            return 'http://127.0.0.1:5500/js/web14.html';
+            case 'Giày adidas Forum Low ‘Royal Blue’ FY7974':
+            return 'http://127.0.0.1:5500/js/web15.html';
+            case 'Giày adidas Forum Exhibit Low 2.0 ‘Kream’ ID1849':
+            return 'http://127.0.0.1:5500/js/web16.html';
+            case 'Giày adidas Forum Exhibit Low ‘Sky Tint’ GW6348':
+            return 'http://127.0.0.1:5500/js/web17.html';
+            case 'Giày adidas Forum Low Trắng Đen FY7757':
+            return 'http://127.0.0.1:5500/js/web18.html';
+            case 'Giày adidas Forum Low Off White Magic Beige HQ1492':
+            return 'http://127.0.0.1:5500/js/web19.html';
+            case 'Giày adidas Forum Low ‘White Iridescent’ GX5061':
+            return 'http://127.0.0.1:5500/js/web20.html';
+            
+        default:
+          return 'http://127.0.0.1:5500/js/trangchu.html'; // URL mặc định hoặc xử lý khi không có sản phẩm nào phù hợp
+      }
+    }
+  });
+  
+        //
+       let currentSlide = 0;
+const slides = document.querySelectorAll('.slides img');
+const totalSlides = slides.length;
+
+function showSlide(n) {
+    slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === n);
+    });
+}
+
+function moveSlide(n) {
+    currentSlide = (currentSlide + n + totalSlides) % totalSlides;
+    showSlide(currentSlide);
+}
+
+showSlide(currentSlide);
+
+// Contact info
+const contactInfo = {
+    phone: "0931.999.499",
+    hours: "8h30 : 18h30",
+    policies: [
+        {
+            icon: "🚚",
+            text: "Giao hàng miễn phí",
+            note: "Hóa đơn trên 500k"
+        },
+        {
+            icon: "⏰",
+            text: "Đổi trả miễn phí 14 ngày",
+            note: "Với mua online"
+        },
+        {
+            icon: "💳",
+            text: "Thanh toán COD",
+            note: "Hoặc chuyển khoản"
+        }
+    ]
+};
+
+function renderContactInfo() {
+    const container = document.getElementById('contact-info');
+    container.innerHTML = `
+        <p><strong class='green-text'>GỌI ĐỂ MUA HÀNG NHANH HƠN</strong></p>
+        <p>${contactInfo.phone} (${contactInfo.hours})</p>
+        <p><strong class='green-text'>CHÍNH SÁCH BÁN HÀNG</strong></p>
+        <ul class="policies">
+            ${contactInfo.policies.map(policy => `
+                <li>
+                    <span>${policy.icon}</span>
+                    <span>${policy.text}</span>
+                    <span>(${policy.note})</span>
+                </li>
+            `).join('')}
+        </ul>
+    `;
+}
+
+document.addEventListener('DOMContentLoaded', renderContactInfo);
+
+// Size selection functionality
+const sizeOptions = document.querySelectorAll('.size-option');
+
+sizeOptions.forEach(option => {
+    option.addEventListener('click', function() {
+        sizeOptions.forEach(opt => opt.classList.remove('selected'));
+        this.classList.add('selected');
+    });
+});
+
+// Quantity adjustment functionality
+const giam = document.getElementById('giamso');
+const tang = document.getElementById('tangso');
+const hienthi = document.getElementById('sohientai');
+
+let dem = 1;
+
+giam.addEventListener('click', () => {
+    if (dem > 1) {
+        dem--;
+        hienthi.textContent = dem;
+    }
+});
+
+tang.addEventListener('click', () => {
+    dem++;
+    hienthi.textContent = dem;
+});
+
+// Tab functionality for warranty policy
+const tabs = document.querySelectorAll('.tab');
+const contents = document.querySelectorAll('.tab-content');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+    });
+});
+
+// LocalStorage for cart management
+const cartKey = 'shoppingCart';
+
+document.getElementById('add-to-cart').addEventListener('click', addToCart);
+document.getElementById('buy-now').addEventListener('click', buyNow);
+
+function addToCart() {
+    const product = {
+        name: document.querySelector('.them-vao-gio').dataset.sanpham,
+        price: document.querySelector('.them-vao-gio').dataset.gia,
+        size: document.querySelector('.size-option.selected').textContent,
+        quantity: parseInt(hienthi.textContent)
+    };
+    saveToLocalStorage(product);
+    alert('Sản phẩm đã được thêm vào giỏ hàng!');
+    updateCartCount();
+}
+
+function saveToLocalStorage(product) {
+    let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+    const index = cart.findIndex(item => item.name === product.name && item.size === product.size);
+    if (index > -1) {
+        cart[index].quantity += product.quantity;
+    } else {
+        cart.push(product);
+    }
+    localStorage.setItem(cartKey, JSON.stringify(cart));
+}
+
+function buyNow() {
+    const product = {
+        name: document.querySelector('.them-vao-gio').dataset.sanpham,
+        price: document.querySelector('.them-vao-gio').dataset.gia,
+        size: document.querySelector('.size-option.selected').textContent,
+        quantity: parseInt(hienthi.textContent),
+        image: document.querySelector('.slides img.active').src // Lấy đường dẫn hình ảnh đang hiển thị
+    };
+    saveToLocalStorage(product);
+    window.location.href = 'cart.html'; // Redirect to the checkout page
+}
+
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById('cart-count').textContent = cartCount;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+});
+    </script>
+</body>
+</html>

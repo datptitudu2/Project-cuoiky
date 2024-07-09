@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang sản phẩm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .main {
+            display: flex;
+            margin-top:100px
+        }
+        .thanh-dieu-huong {
+            width: 20%;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .noi-dung {
+            width: 80%;
+            padding: 20px;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .product-item {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            overflow: hidden; 
+        }
+        .product-item img {
+            width: 80%;
+            height: auto;
+            transition: transform 0.3s ease;
+
+        }
+        .product-item h3 {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .product-item p {
+            font-size: 14px;
+            color: #555;
+        }
+        .phanloc, .the-loai {
+            margin-bottom: 20px;
+        }
+        .phanloc input {
+            width: 100%;
+            margin: 5px 0;
+        }
+        .the-loai ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .the-loai li {
+            margin: 10px 0;
+        }
+        .product-item:hover {
+            border: 1px solid black;
+
+        }
+        .product-item h3:hover {
+            color:red
+        }
+        .product-item:hover img {
+    transform: translateY(-10px); /* Lift the image up by 10px */
+}
+/*css phần đầu */
+header {
+            background-color: rgb(233,150,122);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+         
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            color:black;
+            text-decoration: none;
+            padding-bottom:30px;
+            padding-right:60px;
+            font-size:30px;
+            font-family:Arial, Helvetica, sans-serif
+        }
+
+        nav ul li a:hover {
+            cursor:pointer;
+            color:white;
+        }
+        #img1 {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-right: 60px; /* Thêm khoảng cách bên phải cho hình ảnh */
+            vertical-align: middle; /* Căn giữa hình ảnh với các liên kết */
+        }
+
+        #img1:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        /* css phần cuối */
+        .about-us a {
+            display: block;
+            margin-bottom: 10px; /* Điều chỉnh khoảng cách giữa các dòng */
+            text-decoration: none; /* Loại bỏ gạch chân của liên kết nếu muốn */
+        }
+        .about-us {
+            background-color:	rgb(248,248,255);
+            padding: 10px 20px;
+            text-align: center;
+            margin-top:400px;
+            height:500px
+        }
+        .about-us h2 {
+            margin-bottom: 20px;
+        }
+        .container2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            font-size:18px
+        }
+        #nhap1, #nhap2, #nhap3, .newsletter {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .newsletter {
+            text-align: center;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .newsletter-form label {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .newsletter-form input {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .newsletter-form button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #218838;
+        }
+
+       
+        #nhap2 a, #nhap3 a {
+            text-decoration: none;
+            color: #000;
+            transition: color 0.3s ease;
+        }
+
+        #nhap2 a:hover, #nhap3 a:hover {
+            color: #ca2b07f4;
+        }
+
+        .dac-diem {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            margin-top: 100px;
+        }
+        .dac-diem .dac-diem-item {
+            text-align: center;
+        }
+        .dac-diem .dac-diem-item img {
+            width: 50px;
+            height: 50px;
+        }
+        .dac-diem .dac-diem-item h3 {
+            color: #333;
+            margin: 10px 0 5px;
+        }
+        .dac-diem .dac-diem-item p {
+            color: #666;
+            margin: 0;
+        }
+
+        .about-us {
+            margin-top:0
+        }
+        .button {
+    width: 30px;
+    height: 50px;
+    margin-bottom: 400px;
+    cursor: pointer;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#messengerButton {
+            border-radius: 50%;
+            background-image: url('https://banghieuminhkhang.com/upload/Thu-vien/logo-facebook-vector-11.jpg');
+            margin-bottom:40px;
+            width:60px;
+            height:60px
+        }
+           
+        #zaloButton {
+            border-radius:50%;
+            background-image:url('https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-App-Rec.png');
+            width:60px;
+            height:60px
+            
+        }
+
+
+        .search-container {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-left: -30px;
+            border-radius: 5px;
+        }
+
+        .search-container input {
+            width: 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            font-size: 16px;
+            transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            
+            background-color:white;
+            border:1px solid black
+        }
+
+       
+
+        .search-icon {
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        .results {
+            position: absolute;
+            top: calc(100% + 5px);
+            width: 170px;
+            margin-left:1670px;
+            margin-top:-48px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+           
+        }
+
+        .results.active {
+            display: block;
+          
+            
+        }
+
+        .result-item {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .result-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        #accountInfo {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    #userInfo {
+        display: none;
+        position: absolute;
+        margin-left:40px;
+        background-color: #f9f9f9;
+        width: 150px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        
+        
+    }
+
+    #accountInfo:hover #userInfo {
+        display: block;
+    }
+    #userInfo a {
+        color: black;
+        padding: 12px 16px;
+        width:120px;
+        text-decoration: none;
+        display: block;
+        font-size:15px
+    }
+
+    #userInfo a:hover {
+        background-color: #f1f1f1;
+        color:#CC9966
+    }
+
+
+    #icon2 {
+        font-size: 30px;
+        color: #000;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a><img src="https://ibrand.vn/wp-content/uploads/2022/10/logo-shop-giay-8.jpg" id="img1"></a>
+                <li><a href="http://127.0.0.1:5500/js/trangchuweb.html">Trang chủ</a></li>
+                <li><a href="http://127.0.0.1:5500/js/websanpham.html">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+                <li><a href="http://127.0.0.1:5500/js/webchinhsach.html">Chính sách bảo hành</a></li>
+                <li><a href="http://127.0.0.1:5500/js/webgiohang.html"  ><i class='bx bx-cart' id="icon1"  style="font-size:30px"></i></a></li>
+                <li>
+                    <div class="search-container">
+                      <input type="text" id="search" placeholder="Tìm kiếm sản phẩm" required style="width:150px;">
+                      <span class="search-icon" id="search-icon"><i class='bx bx-search-alt-2' id="icon3"style="font-size:30px"></i></span>
+                    </div>
+                    </li>
+                    <div class="results" id="results"></div>
+                    <li><div id="accountInfo" style="margin-left:5px">
+                        <i class='bx bx-user-circle' id="icon2"style="font-size:30px;margin-left:50px;"  onclick="myfunctionxx()"></i>
+                            <div id="userInfo" >
+                                <!-- Thông tin người dùng sẽ được hiển thị ở đây -->
+                              
+                            </div>
+                        </div>
+                        </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        <div class="thanh-dieu-huong">
+                <div class="the-loai">
+                <h2>Danh mục</h2>
+                <ul>
+                    <li>Giày thể thao nam</li>
+                    <li>Giày đi bộ</li>
+                    
+                </ul>
+            </div>
+            <div class="phanloc">
+                <h2>Lọc theo giá</h2>
+                <label for="price-min" style="font-size:20px;font-family:Arial, Helvetica, sans-serif">Giá thấp nhất:</label><br>
+                <input type="number" id="price-min" name="price-min" min="0" value="1150000" style="margin-top:20px;width:300px;height:40px;font-size:20px"><br>
+                <label for="price-max"style="font-size:20px;font-family:Arial, Helvetica, sans-serif;">Giá cao nhất:</label><br>
+                <input type="number" id="price-max" name="price-max" min="0" value="1500000" style="margin-top:20px;width:300px;height:40px;font-size:20px"><br>
+                <button onclick="product()" style="margin-top:20px;margin-left:100px;background-color:chartreuse;width:100px;height:40px">Lọc</button>
+            </div>
+        </div>
+        <div class="noi-dung">
+            <div class="product-grid" id="product-grid">
+                <div class="product-item" data-price="3349000">
+                    <img id="h1" style="cursor:pointer" src="https://sneakerdaily.vn/wp-content/uploads/2021/07/Giay-Air-Jordan-6-Rings-Tropical-Twist-GS-323419-115.jpg.webp" alt="Penny Loafer">
+                    <h3 >Giày Air Jordan 6 Rings ‘Tropical Twist’ (GS) 323419-115</h3>
+                    <p>3,349,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="3349000">
+                    <img id="h2" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2021/01/Giay-nam-Nike-Dunk-Low-SB-J-Pack-Chicago-BQ6817-600.jpg.webp" alt="Oxford">
+                    <h3>Giày (WMNS) Air Jordan 6 Retro GORE-TEX ‘Brown Kelp’ FD1643-300</h3>
+                    <p>3,349,000đ</p>
+                </div>
+                <div class="product-item" data-price="3349000">
+                    <img id="h3" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2022/06/giay-converse-run-star-hi-black-166800c.jpg.webp" alt="Cap Toe Oxford">
+                    <h3>Giày Converse Run Star Hi ‘Black’ 166800C</h3>
+                    <p>3,349,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="3349000">
+                    <img id="h4" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2021/01/Giay-nam-Nike-Dunk-Low-SB-J-Pack-Chicago-BQ6817-600.jpg.webp" alt="Casual Loafer">
+                    <h3>Giày Nike Dunk Low EMB ‘NBA 75th Anniversary Chicago’ DD3363-100</h3>
+                    <p>3,349,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="2649000">
+                    <img id="h5" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2021/05/nike-air-force-1-id-gucci-ct7875-994.png.webp" alt="Dress Shoes">
+                    <h3>Giày nam Nike Air Force 1 ID ‘Gucci’ CT7875-994</h3>
+                    <p>2,649,000đ</p>
+                </div>
+                <div class="product-item" data-price="2300000 ">
+                    <img id="h6" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2021/03/Giay-nam-Nike-Air-Force-1-Low-Popcorn-CW2919-100.jpg.webp" alt="Classic Shoes">
+                    <h3>Giày nam Nike Air Force 1 Low ‘Under Construction – White’ BQ4421-100</h3>
+                    <p>2,300,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="2350000">
+                    <img id="h7" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2022/08/Giay-Nike-Air-Jordan-1-Retro-High-OG-Denim-DM9036-104.jpg.webp" alt="Formal Shoes">
+                    <h3>Giày Nike Air Jordan 1 Retro High OG ‘Heritage’ 555088-161</h3>
+                    <p>2,350,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="2100000">
+                    <img id="h8" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2023/11/giay-adidas-alphabounce-ek-white-gw2265.jpg.webp" alt="Luxury Shoes">
+                    <h3>Giày adidas Alphabounce Ek ‘Triple Black’ GY5403</h3>
+                    <p>2,100,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="3290000">
+                    <img id="h9" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2023/10/Giay-Adidas-Alphabounce-Plus-Black-Carbon-HP6142.jpg.webp" alt="Luxury Shoes">
+                    <h3>Giày adidas Alphabounce Ek ‘Black/Orange’ GW2267</h3>
+                    <p>3,290,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="1590000">
+                    <img id="h10" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2024/04/Giay-adidas-Samba-Og-Core-Black-IH3119-1.jpg" alt="Luxury Shoes">
+                    <h3>Giày adidas Samba Og ‘Core Black’ IH3119</h3>
+                    <p>1,590,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="3890000">
+                    <img id="h11" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2022/10/giay-adidas-forum-exhibit-low-off-white-shadow-navy-gx4121.jpg" alt="Luxury Shoes">
+                    <h3>Giày adidas Forum Exhibit Low Off White Shadow Navy GX4121</h3>
+                    <p>3,890,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="2690000">
+                    <img id="h12" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2022/10/giay-adidas-forum-low-black-white-hq1494-.png" alt="Luxury Shoes">
+                    <h3>Giày adidas Forum Low ‘Black White’ HQ1494</h3>
+                    <p>2,690,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="3890000">
+                    <img id="h13" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2022/11/giay-adidas-forum-exhibit-low-chalky-brown-gw6347.png" alt="Luxury Shoes">
+                    <h3>Giày adidas Forum Exhibit Low ‘Chalky Brown’ GW6347</h3>
+                    <p>3,890,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="3290000">
+                    <img id="h14" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2022/04/giay-home-alone-x-adidas-forum-low-white-red-gz4378-14.png.webp" alt="Luxury Shoes">
+                    <h3>Giày Home Alone x adidas Forum Low ‘White Red’ GZ4378</h3>
+                    <p>3,290,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="2290000">
+                    <img id="h15" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2022/01/httpsmoresneakers.comreleasesadidas-originals-forum-low-junior-royal-blue-fy7974-8.png" alt="Luxury Shoes">
+                    <h3>Giày adidas Forum Low ‘Royal Blue’ FY7974
+                    </h3>
+                    <p>2,290,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="1849000">
+                    <img id="h16" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2023/03/giay-adidas-forum-exhibit-low-2-0-kream-id1849.jpg" alt="Luxury Shoes">
+                    <h3>Giày adidas Forum Exhibit Low 2.0 ‘Kream’ ID1849
+                    </h3>
+                    <p>1,849,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="3290000">
+                    <img id="h17" style="cursor:pointer" src="https://sneakerdaily.vn/wp-content/uploads/2022/11/Giay-adidas-Forum-Exhibit-Low-%E2%80%98Sky-Tint-GW6348.jpg" alt="Luxury Shoes">
+                    <h3>Giày adidas Forum Exhibit Low ‘Sky Tint’ GW6348</h3>
+                    <p>3,290,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="2790000">
+                    <img id="h18" style="cursor:pointer" src="https://sneakerdaily.vn/wp-content/uploads/2022/09/Giay-adidas-Forum-Low-Trang-Den-FY7757.jpg" alt="Luxury Shoes">
+                    <h3>Giày adidas Forum Low Trắng Đen FY7757</h3>
+                    <p>2,790,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="2990000">
+                    <img id="h19" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2022/09/Giay-adidas-Forum-Low-Off-White-Magic-Beige-HQ1492.jpg" alt="Luxury Shoes">
+                    <h3>Giày adidas Forum Low Off White Magic Beige HQ1492</h3>
+                    <p>2,990,000 ₫</p>
+                </div>
+                <div class="product-item" data-price="3290000">
+                    <img id="h20" style="cursor:pointer"src="https://sneakerdaily.vn/wp-content/uploads/2022/06/Giay-adidas-Forum-Low-White-Iridescent-GX5061.jpg" alt="Luxury Shoes">
+                    <h3>Giày adidas Forum Low ‘White Iridescent’ GX5061</h3>
+                    <p>3,290,000 ₫</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="dac-diem">
+        <div class="dac-diem-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/free-shipping.png" alt="Miễn phí vận chuyển">
+            <h3>SHIP COD TOÀN QUỐC</h3>
+            <p>Miễn phí vận chuyển toàn quốc cho đơn hàng từ 999.000 đ.</p>
+        </div>
+        <div class="dac-diem-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/guarantee.png" alt="Chất lượng đảm bảo">
+            <h3>CHẤT LƯỢNG TUYỆT ĐỐI 100%</h3>
+            <p>Cam kết sản phẩm chính hãng đến từ Converse, Vans, Palladium và Supra.</p>
+        </div>
+        <div class="dac-diem-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/easy.png" alt="Thanh toán dễ dàng">
+            <h3>THANH TOÁN DỄ DÀNG</h3>
+            <p>Phương thức thanh toán đa dạng và cực kì tiện lợi.</p>
+        </div>
+        <div class="dac-diem-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/time.png" alt="Tiết kiệm thời gian">
+            <h3>TIẾT KIỆM THỜI GIAN</h3>
+            <p>Mua sắm dễ hơn khi Online.</p>
+        </div>
+    </div>
+    <div id="phancuoi">
+        <div class="about-us" id="about">
+            <h1 style="font-family: Playwrite NO, cursive;font-size:30px">Về chúng tôi</h1>
+            <div class="container2">
+                <div id="nhap1">
+                    <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Cơ sở 1: 122 Hoàng Quốc Việt</h3>
+                    <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Cơ sở 2: km10 Nguyễn Trãi</h3>
+                </div>
+                <div id="nhap2">
+                    <h2 style="font-family: Playwrite NO, cursive;font-size:20px">Hướng dẫn</h2>
+                    <a href="#">Hướng dẫn mua hàng</a><br>
+                    <a href="#">Giao nhận và thanh toán</a><br>
+                    <a href="#">Đổi trả và bảo hành</a><br>
+                    <a href="#">Đăng kí thành viên</a><br>
+                    <a href="#">Tra cứu đơn hàng</a>
+                </div>
+                <div id="nhap3">
+                    <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Chính sách bảo hành</h3>
+                    <a href="http://127.0.0.1:5500/js/webchinhsach.html#">Chính sách đổi hàng</a><br>
+                        <a href="http://127.0.0.1:5500/js/webtracuu.html">Theo dõi sản phẩm</a><br>
+                        <a href="http://127.0.0.1:5500/js/webchinhsach.html">Chính sách thanh toán</a>
+                </div>
+                <div class="newsletter">
+                    <h2 style="font-family: Playwrite NO, cursive;font-size:20px">Đăng ký nhận thông tin mới nhất</h2>
+                    <p>Nhận thông tin sản phẩm mới nhất, tin khuyến mãi và nhiều hơn nữa.</p>
+                    <form class="newsletter-form" action="/submit-form" method="POST">
+                        <label for="email">Email của bạn:</label>
+                        <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required><br>
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <div class="button" id="messengerButton"></div>
+        <div class="button" id="zaloButton"></div>
+    </div>
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const storedUserInfo = localStorage.getItem('userInfo');
+    const userInfo = storedUserInfo ? JSON.parse(storedUserInfo) : null;
+    const userInfoDiv = document.getElementById('userInfo');
+
+    if (userInfo && userInfo.ten) {
+        // Nếu đã đăng nhập
+        userInfoDiv.innerHTML = `<p style="padding-left:40px">Xin chào, ${userInfo.ten}</p><a href="#" onclick="logout()">Đăng xuất</a>`;
+    } else {
+        // Nếu chưa đăng nhập
+        userInfoDiv.innerHTML = `
+            <a href="http://127.0.0.1:5500/js/login.html">Đăng nhập</a>
+            <a href="http://127.0.0.1:5500/js/dangky.html">Đăng ký</a>
+        `;
+    }
+});
+
+function logout() {
+    localStorage.removeItem('userInfo'); // Xóa thông tin người dùng khi đăng xuất
+    window.location.href = 'http://127.0.0.1:5500/js/login.html'; // Chuyển hướng về trang đăng nhập
+}
+ 
+function myfunctionxx(){
+        window.location.href='http://127.0.0.1:5500/js/trangthongtin.html';
+    }
+
+        document.getElementById('zaloButton').addEventListener('click', function() {
+    window.location.href = 'https://zalo.me/g/rrjgou055'; })
+    document.getElementById('messengerButton').addEventListener('click', function() {
+        window.location.href = 'https://www.facebook.com/dattkdz/about'; })
+
+       
+
+    function product() {
+        const minPrice = parseInt(document.getElementById('price-min').value, 10);
+        const maxPrice = parseInt(document.getElementById('price-max').value, 10);
+        const product = document.querySelectorAll('.product-item');
+        product.forEach(product => {
+            const price = parseInt(product.getAttribute('data-price'), 10);
+            console.log(`Giá sản phẩm: ${price}`);
+            if (price >= minPrice && price <= maxPrice) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+
+    if(!localStorage.getItem('sanpham')) {
+    const sanpham = ['Giày Air Jordan 6 Rings ‘Tropical Twist’ (GS) 323419-115',
+       'Giày (WMNS) Air Jordan 6 Retro GORE-TEX ‘Brown Kelp’ FD1643-300',
+        'Giày Converse Run Star Hi ‘Black’ 166800C', 
+        'Giày Nike Dunk Low EMB ‘NBA 75th Anniversary Chicago’ DD3363-100',
+      'Giày nam Nike Air Force 1 ID ‘Gucci’ CT7875-994',
+      'Giày nam Nike Air Force 1 Low ‘Under Construction – White’ BQ4421-100',
+    'Giày Nike Air Jordan 1 Retro High OG ‘Heritage’ 555088-161',
+    'Giày adidas Alphabounce Ek ‘Triple Black’ GY5403',
+    'Giày adidas Alphabounce Ek ‘Black/Orange’ GW2267',
+    'Giày adidas Samba Og ‘Core Black’ IH3119',
+    'Giày adidas Forum Exhibit Low Off White Shadow Navy GX4121',
+    'Giày adidas Forum Low ‘Black White’ HQ1494',
+    'Giày adidas Forum Exhibit Low ‘Chalky Brown’ GW6347',
+    'Giày Home Alone x adidas Forum Low ‘White Red’ GZ4378',
+    'Giày adidas Forum Low ‘Royal Blue’ FY7974',
+    'Giày adidas Forum Exhibit Low 2.0 ‘Kream’ ID1849',
+    'Giày adidas Forum Exhibit Low ‘Sky Tint’ GW6348',
+    'Giày adidas Forum Low Trắng Đen FY7757',
+    'Giày adidas Forum Low Off White Magic Beige HQ1492',
+    'Giày adidas Forum Low ‘White Iridescent’ GX5061'];
+    localStorage.setItem('sanpham', JSON.stringify(sanpham));
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById('search');
+    const searchIcon = document.getElementById('search-icon');
+    const resultsContainer = document.getElementById('results');
+  
+    searchIcon.addEventListener('click', function() {
+      // Hiển thị hoặc ẩn thanh tìm kiếm
+      if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+        searchInput.style.display = 'block';
+        searchInput.focus();
+      } else {
+        searchInput.style.display = 'none';
+        resultsContainer.style.display = 'none';
+      }
+    });
+  
+    searchInput.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      const sanpham = JSON.parse(localStorage.getItem('sanpham'));
+      const filteredSanpham = sanpham.filter(product => product.toLowerCase().includes(query));
+  
+      // Hiển thị kết quả tìm kiếm
+      resultsContainer.innerHTML = '';
+      filteredSanpham.forEach(product => {
+        const div = document.createElement('div');
+        div.classList.add('result-item');
+        div.textContent = product;
+        resultsContainer.appendChild(div);
+      });
+  
+      resultsContainer.style.display = filteredSanpham.length > 0 ? 'block' : 'none';
+  
+      // Xử lý sự kiện click vào kết quả tìm kiếm
+      const resultItems = document.querySelectorAll('.result-item');
+      resultItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const productName = this.textContent;
+          const productURL = generateProductURL(productName); // Chuyển hướng đến trang web của sản phẩm
+          window.location.href = productURL;
+          resultsContainer.style.display = 'none';
+        });
+      });
+    });
+  
+    // Đóng kết quả tìm kiếm khi click bên ngoài
+    document.addEventListener('click', function(event) {
+      if (!searchIcon.contains(event.target) && !resultsContainer.contains(event.target) && !searchInput.contains(event.target)) {
+        resultsContainer.style.display = 'none';
+        searchInput.style.display = 'none';
+      }
+    });
+  
+    // Hàm sinh URL dựa vào tên sản phẩm
+    function generateProductURL(productName) {
+     
+      switch (productName) {
+        case 'Giày Air Jordan 6 Rings ‘Tropical Twist’ (GS) 323419-115':
+          return 'http://127.0.0.1:5500/js/web001.html';
+        case 'Giày (WMNS) Air Jordan 6 Retro GORE-TEX ‘Brown Kelp’ FD1643-300':
+          return 'http://127.0.0.1:5500/js/web02.html';
+ 
+        case 'Giày Nike Dunk Low EMB ‘NBA 75th Anniversary Chicago’ DD3363-100':
+            return 'http://127.0.0.1:5500/js/web3.html';
+          case 'Giày Converse Run Star Hi ‘Black’ 166800C':
+            return 'http://127.0.0.1:5500/js/web4.html';
+         
+          case 'Giày nam Nike Air Force 1 ID ‘Gucci’ CT7875-994':
+            return 'http://127.0.0.1:5500/js/web5.html';
+          
+            case 'Giày nam Nike Air Force 1 Low ‘Under Construction – White’ BQ4421-100':
+            return 'http://127.0.0.1:5500/js/web6.html';
+         
+         
+          case 'Giày Nike Air Jordan 1 Retro High OG ‘Heritage’ 555088-161':
+            return 'http://127.0.0.1:5500/js/web7.html';
+          case 'Giày adidas Alphabounce Ek ‘Triple Black’ GY5403':
+            return 'http://127.0.0.1:5500/js/web8.html';
+        
+          case 'Giày adidas Alphabounce Ek ‘Black/Orange’ GW2267':
+            return 'http://127.0.0.1:5500/js/web9.html';
+            
+            case 'Giàyadidas Samba Og ‘Core Black’ IH3119':
+            return 'http://127.0.0.1:5500/js/web10.html';
+            case 'Giày adidas Forum Exhibit Low Off White Shadow Navy GX4121':
+            return 'http://127.0.0.1:5500/js/web11.html';
+            
+            case 'Giày adidas Forum Low ‘Black White’ HQ1494':
+            return 'http://127.0.0.1:5500/js/web12.html';
+            case 'Giày adidas Forum Exhibit Low ‘Chalky Brown’ GW6347':
+            return 'http://127.0.0.1:5500/js/web13.html';
+            case 'Giày Home Alone x adidas Forum Low ‘White Red’ GZ4378<':
+            return 'http://127.0.0.1:5500/js/web14.html';
+            case 'Giày adidas Forum Low ‘Royal Blue’ FY7974':
+            return 'http://127.0.0.1:5500/js/web15.html';
+            case 'Giày adidas Forum Exhibit Low 2.0 ‘Kream’ ID1849':
+            return 'http://127.0.0.1:5500/js/web16.html';
+            case 'Giày adidas Forum Exhibit Low ‘Sky Tint’ GW6348':
+            return 'http://127.0.0.1:5500/js/web17.html';
+            case 'Giày adidas Forum Low Trắng Đen FY7757':
+            return 'http://127.0.0.1:5500/js/web18.html';
+            case 'Giày adidas Forum Low Off White Magic Beige HQ1492':
+            return 'http://127.0.0.1:5500/js/web19.html';
+            case 'Giày adidas Forum Low ‘White Iridescent’ GX5061':
+            return 'http://127.0.0.1:5500/js/web20.html';
+            
+        default:
+          return 'http://127.0.0.1:5500/js/trangchu.html'; 
+      }
+    }
+  });
+
+
+
+  document.getElementById('h1').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web001.html';
+        })
+
+        document.getElementById('h2').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web02.html';
+        });
+
+        document.getElementById('h3').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web4.html';
+        });
+
+        document.getElementById('h4').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web3.html';
+        });
+
+        document.getElementById('h5').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web5.html';
+        });
+
+        document.getElementById('h6').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web6.html';
+        });
+
+        document.getElementById('h7').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web7.html';
+        });
+
+        document.getElementById('h8').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web8.html';
+        });
+
+        document.getElementById('h9').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web9.html';
+        });
+
+        document.getElementById('h10').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web10.html';
+        });
+
+        document.getElementById('h11').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web11.html';
+        });
+
+        document.getElementById('h12').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web12.html';
+        });
+
+        document.getElementById('h13').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web13.html';
+        });
+
+        document.getElementById('h14').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web14.html';
+        });
+
+        document.getElementById('h15').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web15.html';
+        });
+
+        document.getElementById('h16').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web16.html';
+        });
+
+        document.getElementById('h17').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web17.html';
+        });
+
+        document.getElementById('h18').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web18.html';
+        });
+
+        document.getElementById('h19').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web19.html';
+        });
+
+        document.getElementById('h20').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/js/web20.html';
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 250px;
+    
+}
+
+.slider {
+    position: relative;
+    max-width: 800px;
+    overflow: hidden;
+}
+
+.slides img {
+    width: 100%;
+    display: none;
+    height: 650px;
+}
+
+.slides img.active {
+    display: block;
+}
+
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.navigation button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.navigation button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#change1 {
+    font-size: 20px;
+    margin-left: 70px;
+    max-width: 600px;
+    font-family: Arial, sans-serif;
+    margin-top:0;
+   
+    
+}
+/*header */
+header {
+    background-color: rgb(233,150,122);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+   
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: inline-block;
+    color:black;
+    text-decoration: none;
+    padding-bottom:30px;
+    padding-right:60px;
+    font-size:30px
+}
+
+nav ul li a:hover {
+   cursor:pointer;
+   color:white
+}
+#img1 {
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-right: 60px; /* Thêm khoảng cách bên phải cho hình ảnh */
+    vertical-align: middle; /* Căn giữa hình ảnh với các liên kết */
+}
+
+#img1:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+#size-selector {
+    margin: 20px;
+}
+
+.size-options {
+    display: flex;
+    gap: 10px;
+}
+
+.size-option {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.size-option.selected {
+    border: 2px solid #000;
+}
+
+.size-option:hover {
+    border: 2px solid #000;
+}
+
+.about-us a {
+    display: block;
+    margin-bottom: 10px; /* Điều chỉnh khoảng cách giữa các dòng */
+    text-decoration: none; /* Loại bỏ gạch chân của liên kết nếu muốn */
+}
+.about-us {
+    background-color:	rgb(248,248,255);
+    padding: 10px 20px;
+    text-align: center;
+    margin-top:1100px;
+    height:500px;
+    margin-top:350px
+}
+.about-us h2 {
+    margin-bottom: 20px;
+}
+.container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-size:18px
+}
+#nhap1, #nhap2, #nhap3, .newsletter {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.newsletter {
+    text-align: center;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter-form label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.newsletter-form input {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.newsletter-form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.newsletter-form button:hover {
+    background-color: #218838;
+}
+
+
+#nhap2 a, #nhap3 a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+#nhap2 a:hover, #nhap3 a:hover {
+    color: #ca2b07f4;
+}
+
+/* phan chọn size */
+.contact-box {
+    margin-top:100px;
+    border-radius:30px;
+    border-style:solid
+
+}
+.contact-box p {
+    margin: 5px 0;
+    margin-left:20px
+}
+.policies {
+    list-style: none;
+    padding: 0;
+}
+.policies li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.policies li span {
+    margin-right: 10px;
+}
+.green-text {
+    color:red
+}
+/* css cho chon so luong */
+.main1 {
+display: flex;
+align-items: center;
+gap: 20px;
+width:600px;
+margin-left:22px;
+
+}
+
+.tang_giam {
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.tang_giam button {
+width: 30px;
+height: 30px;
+border: 1px solid #000;
+background-color: #fff;
+cursor: pointer;
+font-size: 18px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.tang_giam .hien_tai {
+width: 30px;
+height: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: 1px solid #000;
+background-color: #fff;
+}
+
+.button {
+padding: 10px 20px;
+border: 1px solid #000;
+background-color: #fff;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.3s, color 0.3s;
+}
+
+.them-vao-gio {
+color:#555;
+width:200px;
+height:80px;
+border-radius:20px;
+background-color:white
+
+}
+
+.button-buy {
+background-color: #000;
+color: #fff;
+width:160px;
+height:80px;
+border-radius:20px
+}
+
+.them-vao-gio:hover {
+background-color: #000;
+color: #fffffffb;
+}
+
+.button-buy:hover {
+background-color: #fff;
+color: #000;
+}
+/* last end */
+
+.lastend {
+    margin-top:600px
+}
+
+.button {
+    width: 30px;
+    height: 50px;
+    margin-bottom: 400px;
+    cursor: pointer;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#messengerButton {
+    border-radius: 50%;
+    background-image: url('https://banghieuminhkhang.com/upload/Thu-vien/logo-facebook-vector-11.jpg');
+    margin-bottom:40px;
+    border-color:white;
+    
+}
+   
+#zaloButton {
+    border-radius:50%;
+    background-image:url('https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-App-Rec.png');
+    border-color:white
+    
+}

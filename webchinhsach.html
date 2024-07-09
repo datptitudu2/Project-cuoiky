@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính Sách Bảo Hành</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+           
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+           
+            padding: 20px;
+            border-radius: 5px;
+            font-size:20px;
+            
+        }
+        h2 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        /*css cho phần thanh nav */
+        #img1 {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-right: 60px; /* Thêm khoảng cách bên phải cho hình ảnh */
+            vertical-align: middle; /* Căn giữa hình ảnh với các liên kết */
+        }
+
+        #img1:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        header {
+            background-color: rgb(233,150,122);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            height:100px
+           
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            color:black;
+            text-decoration: none;
+            padding-bottom:30px;
+            padding-right:60px;
+            font-size:30px;
+            font-family:Arial, Helvetica, sans-serif
+        }
+
+        nav ul li div {
+            display: inline-block;
+            padding-bottom: 30px;
+            padding-right: 60px;
+        }
+        
+        nav ul li div#dang_nhap1 {
+            font-size: 100px;
+            color: #222222;
+        }
+        
+        
+        
+        nav ul li a:hover, nav ul li div:hover {
+            cursor:pointer;
+            
+            
+        }
+
+        nav ul li a:hover {
+            cursor:pointer;
+            color:white
+            
+           
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+           
+            margin-top: 20px;
+        }
+        .feature-item {
+            text-align: center;
+        }
+        .feature-item img {
+            width: 50px;
+            height: 50px;
+        }
+        .feature-item h3 {
+            color: #333;
+            margin: 10px 0 5px;
+        }
+        .feature-item p {
+            color: #666;
+            margin: 0;
+        }
+        /*phần cuối */
+        .about-us a {
+            display: block;
+            margin-bottom: 10px; /* Điều chỉnh khoảng cách giữa các dòng */
+            text-decoration: none; /* Loại bỏ gạch chân của liên kết nếu muốn */
+        }
+        .about-us {
+            background-color:	rgb(248,248,255);
+            padding: 10px 20px;
+            text-align: center;
+            margin-top:400px;
+            height:500px
+        }
+        .about-us h2 {
+            margin-bottom: 20px;
+        }
+        .container2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            font-size:18px
+        }
+        #nhap1, #nhap2, #nhap3, .newsletter {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .newsletter {
+            text-align: center;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .newsletter-form label {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .newsletter-form input {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .newsletter-form button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #218838;
+        }
+
+       
+        #nhap2 a, #nhap3 a {
+            text-decoration: none;
+            color: #000;
+            transition: color 0.3s ease;
+        }
+
+        #nhap2 a:hover, #nhap3 a:hover {
+            color: #ca2b07f4;
+        }
+        .about-us {
+            margin-top:0
+        }
+        .feature-item {
+            margin-right:20px
+        }
+
+        #icon1 i, #icon2 i {
+            font-size: 24px;
+            
+        }
+
+
+        
+        .search-container {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-left: -30px;
+            border-radius: 5px;
+        }
+
+        .search-container input {
+            width: 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            font-size: 16px;
+            transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            
+            background-color:white;
+            border:1px solid black
+        }
+
+       
+
+        .search-icon {
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        .results {
+            position: absolute;
+            top: calc(100% + 5px);
+            width: 170px;
+            margin-left:1630px;
+            margin-top:-48px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+           
+        }
+
+        .results.active {
+            display: block;
+          
+            
+        }
+
+        .result-item {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .result-item:hover {
+            background-color: #f0f0f0;
+        }
+        .button {
+    width: 30px;
+    height: 50px;
+    margin-bottom: 400px;
+    cursor: pointer;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#messengerButton {
+            border-radius: 50%;
+            background-image: url('https://banghieuminhkhang.com/upload/Thu-vien/logo-facebook-vector-11.jpg');
+            margin-bottom:40px;
+            width:60px;
+            height:60px
+        }
+           
+        #zaloButton {
+            border-radius:50%;
+            background-image:url('https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-App-Rec.png');
+            width:60px;
+            height:60px
+            
+        }
+
+
+        #userInfo {
+        display: none;
+        position: absolute;
+        margin-left:-40px;
+        background-color: #f9f9f9;
+        width: 100px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        
+        
+    }
+
+    #accountInfo:hover #userInfo {
+        display: block;
+    }
+    #userInfo a {
+        color: black;
+        padding: 12px 16px;
+        width:120px;
+        text-decoration: none;
+        display: block;
+        font-size:15px
+    }
+
+    #userInfo a:hover {
+        background-color: #f1f1f1;
+        color:#CC9966
+    }
+
+
+    #icon2 {
+        font-size: 30px;
+        color: #000;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a><img src="https://ibrand.vn/wp-content/uploads/2022/10/logo-shop-giay-8.jpg" id="img1"></a>
+                <li><a href="http://127.0.0.1:5500/js/trangchuweb.html">Trang chủ</a></li>
+                <li><a href="http://127.0.0.1:5500/js/websanpham.html">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+                <li><a href="http://127.0.0.1:5500/js/webchinhsach.html">Chính sách bảo hành</a></li>
+                <li><a href="http://127.0.0.1:5500/js/webgiohang.html"  ><i class='bx bx-cart' id="icon1"  style="font-size:30px"></i></a></li>
+                <li>
+                    <div class="search-container">
+                      <input type="text" id="search" placeholder="Tìm kiếm sản phẩm" required style="width:150px;">
+                      <span class="search-icon" id="search-icon"><i class='bx bx-search-alt-2' id="icon3"style="font-size:30px"></i></span>
+                    </div>
+                    </li>
+                    <div class="results" id="results"></div>
+                    <li><div id="accountInfo" style="margin-left:5px">
+                        <i class='bx bx-user-circle' id="icon2"style="font-size:30px;"  onclick="myfunctionxx()"></i>
+                            <div id="userInfo" >
+                                <!-- Thông tin người dùng sẽ được hiển thị ở đây -->
+                              
+                            </div>
+                        </div>
+                        </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>CHÍNH SÁCH BẢO HÀNH</h2>
+        <h3>Điều kiện bảo hành:</h3>
+        <p>Sản phẩm được hỗ trợ khắc phục lỗi miễn phí nếu sản phẩm đó hội đủ các điều kiện sau:</p>
+        <ul>
+            <li>Sản phẩm bị lỗi kỹ thuật do nhà sản xuất như: bung keo.</li>
+            <li>Trong vòng 01 tháng kể từ ngày mua hàng.</li>
+            <li>Khách hàng còn giữ hóa đơn mua hàng tại Website <a href="http://127.0.0.1:5500/js/trangchuweb.html">trangchuweb</a> hoặc hệ thống cửa hàng Nguyen Tien Dat ShoeStore.</li>
+            <li>Địa chỉ áp dụng: nguyên đai, nguyên kiện, không dập tắt, sữa chữa, Hóa đơn có đầy đủ thông tin như: mã, số seri, ngày sản xuất, hãng sản xuất hàng hóa, địa chỉ bảo hành.</li>
+        </ul>
+
+        <h3>Những trường hợp không được hỗ trợ khắc phục lỗi:</h3>
+        <p>Sản phẩm không thuộc điều kiện bảo hành miễn phí mục I.</p>
+        <ul>
+            <li>Sản phẩm không mua từ website <a href="http://127.0.0.1:5500/js/trangchuweb.html">trangchuweb</a> hoặc hệ thống cửa hàng Nguyen Tien Dat Shoe Store.</li>
+            <li>Khách hàng tự ý can thiệp sửa chữa sản phẩm hoặc sản phẩm bị hư hỏng do lỗi người sử dụng như để mất sản phẩm bị trầy xước, hư hỏng, mất tem/phụ kiện, quá thời gian bảo hành, bị hóa đơn không hợp lệ hoặc mất...</li>
+            <li>Sản phẩm có dấu hiệu thay đổi thông số kỹ thuật, ngoại hình hoặc bị hỏng hóc do thiên tai.</li>
+        </ul>
+        <h3>Phương thức bảo hành:</h3>
+        <p>Trước khi gửi sản phẩm bảo hành, vui lòng liên hệ qua inbox fanpage của FACEBOOK: <a href="https://www.facebook.com/dattkdz">https://www.facebook.com/dattkdz</a> hoặc theo chúng tôi qua email: <a href="dattkdz@gmail.com">dattkdz@gmail.com</a> cho chúng tôi thông tin về sản phẩm, sự kiện lỗi gặp phải và gửi yêu cầu bảo hành tại địa chỉ trung tâm bảo hành sản phẩm của chúng tôi. Sau khi nhận được thông tin và phản hồi từ khách hàng, chúng tôi sẽ tiếp nhận và xử lý nhanh chóng để bảo vệ quyền lợi của khách hàng.</p>
+        <p>Quý khách hàng bắt buộc sử dụng vận chuyển do SNEAKER BUZZ chi định cho các trường hợp trả đổi/trả hàng hóa, hàng hóa tự ý vận chuyển khác chúng tôi không chịu trách nhiệm bất kỳ hư hại mất mát nào trong quá trình vận chuyển về cửa hàng của SNEAKER BUZZ.</p>
+        <p>Quý khách vui lòng thanh toán chi phí vận chuyển hàng bảo hành tại đơn vị vận chuyển sau khi mua.</p>
+
+        <h3>Lưu ý:</h3>
+        <ul>
+            <li>Quý khách cần vệ sinh sạch sản phẩm cần bảo hành trước khi gửi về cho chúng tôi.</li>
+            <li>Quy định bảo hành sản phẩm Phụ kiện thời trang, thắt lưng da, tất, nón, ví, dây đeo, móc khóa, sản phẩm chăm sóc vệ sinh giày sẽ không được bảo hành.</li>
+        </ul>
+        <p>Mọi thắc mắc hoặc yêu cầu cần hỗ trợ vui lòng liên hệ với chúng tôi qua hotline: 0349625504 (Thứ 2 đến Thứ 7) hoặc inbox fanpage của FACEBOOK: <a href="https://www.facebook.com/dattkdz">https://www.facebook.com/dattkdz</a>  để được tư vấn.</p>
+    </div>
+    <div class="features">
+        <div class="feature-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/free-shipping.png" alt="Free Shipping">
+            <h3>SHIP COD TOÀN QUỐC</h3>
+            <p>Miễn phí vận chuyển toàn quốc cho đơn hàng từ 999.000 đ.</p>
+        </div>
+        <div class="feature-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/guarantee.png" alt="Quality Guarantee">
+            <h3>CHẤT LƯỢNG TUYỆT ĐỐI 100%</h3>
+            <p>Cam kết sản phẩm chính hãng đến từ Converse, Vans, Palladium và Supra.</p>
+        </div>
+        <div class="feature-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/easy.png" alt="Easy Payment">
+            <h3>THANH TOÁN DỄ DÀNG</h3>
+            <p>Phương thức thanh toán đa dạng và cực kì tiện lợi.</p>
+        </div>
+        <div class="feature-item">
+            <img src="https://img.icons8.com/ios-filled/50/000000/time.png" alt="Time Saving">
+            <h3>TIẾT KIỆM THỜI GIAN</h3>
+            <p>Mua sắm dễ hơn khi Online.</p>
+        </div>
+    </div>
+    <div id="phancuoi">
+        <div class="about-us" id="about">
+            <h1 style="font-family: Playwrite NO, cursive;font-size:30px">Về chúng tôi</h1>
+            <div class="container2">
+                <div id="nhap1">
+                    <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Cơ sở 1: 122 Hoàng Quốc Việt</h3>
+                    <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Cơ sở 2: km10 Nguyễn Trãi</h3>
+                </div>
+                <div id="nhap2">
+                    <h2 style="font-family: Playwrite NO, cursive;font-size:20px">Hướng dẫn</h2>
+                    <a href="#">Hướng dẫn mua hàng</a><br>
+                    <a href="#">Giao nhận và thanh toán</a><br>
+                    <a href="#">Đổi trả và bảo hành</a><br>
+                    <a href="#">Đăng kí thành viên</a><br>
+                    <a href="#">Tra cứu đơn hàng</a>
+                </div>
+                <div id="nhap3">
+                    <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Chính sách bảo hành</h3>
+                    <a href="#">Chính sách đổi hàng</a><br>
+                    <a href="#">Theo dõi sản phẩm</a><br>
+                    <a href="#">Chính sách thanh toán</a>
+                </div>
+                <div class="newsletter">
+                    <h2 style="font-family: Playwrite NO, cursive;font-size:20px">Đăng ký nhận thông tin mới nhất</h2>
+                    <p>Nhận thông tin sản phẩm mới nhất, tin khuyến mãi và nhiều hơn nữa.</p>
+                    <form class="newsletter-form" action="/submit-form" method="POST">
+                        <label for="email">Email của bạn:</label>
+                        <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required><br>
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <div class="button" id="messengerButton"></div>
+        <div class="button" id="zaloButton"></div>
+    </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const storedUserInfo = localStorage.getItem('userInfo');
+    const userInfo = storedUserInfo ? JSON.parse(storedUserInfo) : null;
+    const userInfoDiv = document.getElementById('userInfo');
+
+    if (userInfo && userInfo.ten) {
+        // Nếu đã đăng nhập
+        userInfoDiv.innerHTML = `<p style="padding-left:40px">Xin chào, ${userInfo.ten}</p><a href="#" onclick="logout()">Đăng xuất</a>`;
+    } else {
+        // Nếu chưa đăng nhập
+        userInfoDiv.innerHTML = `
+            <a href="http://127.0.0.1:5500/js/login.html">Đăng nhập</a>
+            <a href="http://127.0.0.1:5500/js/dangky.html">Đăng ký</a>
+        `;
+    }
+});
+
+function logout() {
+    localStorage.removeItem('userInfo'); // Xóa thông tin người dùng khi đăng xuất
+    window.location.href = 'http://127.0.0.1:5500/js/login.html'; // Chuyển hướng về trang đăng nhập
+}
+
+ 
+function myfunctionxx(){
+        window.location.href='http://127.0.0.1:5500/js/trangthongtin.html';
+    }
+
+
+
+     document.getElementById('zaloButton').addEventListener('click', function() {
+    window.location.href = 'https://zalo.me/g/rrjgou055'; })
+    document.getElementById('messengerButton').addEventListener('click', function() {
+        window.location.href = 'https://www.facebook.com/dattkdz/about'; })
+    if(!localStorage.getItem('sanpham')) {
+    const sanpham = ['Giày Air Jordan 6 Rings ‘Tropical Twist’ (GS) 323419-115',
+       'Giày (WMNS) Air Jordan 6 Retro GORE-TEX ‘Brown Kelp’ FD1643-300',
+        'Giày Converse Run Star Hi ‘Black’ 166800C', 
+        'Giày Nike Dunk Low EMB ‘NBA 75th Anniversary Chicago’ DD3363-100',
+      'Giày nam Nike Air Force 1 ID ‘Gucci’ CT7875-994',
+      'Giày nam Nike Air Force 1 Low ‘Under Construction – White’ BQ4421-100',
+    'Giày Nike Air Jordan 1 Retro High OG ‘Heritage’ 555088-161',
+    'Giày adidas Alphabounce Ek ‘Triple Black’ GY5403',
+    'Giày adidas Alphabounce Ek ‘Black/Orange’ GW2267',
+    'Giày adidas Samba Og ‘Core Black’ IH3119',
+    'Giày adidas Forum Exhibit Low Off White Shadow Navy GX4121',
+    'Giày adidas Forum Low ‘Black White’ HQ1494',
+    'Giày adidas Forum Exhibit Low ‘Chalky Brown’ GW6347',
+    'Giày Home Alone x adidas Forum Low ‘White Red’ GZ4378',
+    'Giày adidas Forum Low ‘Royal Blue’ FY7974',
+    'Giày adidas Forum Exhibit Low 2.0 ‘Kream’ ID1849',
+    'Giày adidas Forum Exhibit Low ‘Sky Tint’ GW6348',
+    'Giày adidas Forum Low Trắng Đen FY7757',
+    'Giày adidas Forum Low Off White Magic Beige HQ1492',
+    'Giày adidas Forum Low ‘White Iridescent’ GX5061'];
+    localStorage.setItem('sanpham', JSON.stringify(sanpham));
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById('search');
+    const searchIcon = document.getElementById('search-icon');
+    const resultsContainer = document.getElementById('results');
+  
+    searchIcon.addEventListener('click', function() {
+      // Hiển thị hoặc ẩn thanh tìm kiếm
+      if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+        searchInput.style.display = 'block';
+        searchInput.focus();
+      } else {
+        searchInput.style.display = 'none';
+        resultsContainer.style.display = 'none';
+      }
+    });
+  
+    searchInput.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      const sanpham = JSON.parse(localStorage.getItem('sanpham'));
+      const filteredSanpham = sanpham.filter(product => product.toLowerCase().includes(query));
+  
+      // Hiển thị kết quả tìm kiếm
+      resultsContainer.innerHTML = '';
+      filteredSanpham.forEach(product => {
+        const div = document.createElement('div');
+        div.classList.add('result-item');
+        div.textContent = product;
+        resultsContainer.appendChild(div);
+      });
+  
+      resultsContainer.style.display = filteredSanpham.length > 0 ? 'block' : 'none';
+  
+      // Xử lý sự kiện click vào kết quả tìm kiếm
+      const resultItems = document.querySelectorAll('.result-item');
+      resultItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const productName = this.textContent;
+          const productURL = generateProductURL(productName); // Chuyển hướng đến trang web của sản phẩm
+          window.location.href = productURL;
+          resultsContainer.style.display = 'none';
+        });
+      });
+    });
+  
+    // Đóng kết quả tìm kiếm khi click bên ngoài
+    document.addEventListener('click', function(event) {
+      if (!searchIcon.contains(event.target) && !resultsContainer.contains(event.target) && !searchInput.contains(event.target)) {
+        resultsContainer.style.display = 'none';
+        searchInput.style.display = 'none';
+      }
+    });
+  
+    // Hàm sinh URL dựa vào tên sản phẩm
+    function generateProductURL(productName) {
+   
+      switch (productName) {
+        case 'Giày Air Jordan 6 Rings ‘Tropical Twist’ (GS) 323419-115':
+          return 'http://127.0.0.1:5500/js/web001.html';
+        case 'Giày (WMNS) Air Jordan 6 Retro GORE-TEX ‘Brown Kelp’ FD1643-300':
+          return 'http://127.0.0.1:5500/js/web02.html';
+    
+        case 'Giày Nike Dunk Low EMB ‘NBA 75th Anniversary Chicago’ DD3363-100':
+            return 'http://127.0.0.1:5500/js/web3.html';
+          case 'Giày Converse Run Star Hi ‘Black’ 166800C':
+            return 'http://127.0.0.1:5500/js/web4.html';
+        
+          case 'Giày nam Nike Air Force 1 ID ‘Gucci’ CT7875-994':
+            return 'http://127.0.0.1:5500/js/web5.html';
+          
+            case 'Giày nam Nike Air Force 1 Low ‘Under Construction – White’ BQ4421-100':
+            return 'http://127.0.0.1:5500/js/web6.html';
+         
+         
+          case 'Giày Nike Air Jordan 1 Retro High OG ‘Heritage’ 555088-161':
+            return 'http://127.0.0.1:5500/js/web7.html';
+          case 'Giày adidas Alphabounce Ek ‘Triple Black’ GY5403':
+            return 'http://127.0.0.1:5500/js/web8.html';
+       
+          case 'Giày adidas Alphabounce Ek ‘Black/Orange’ GW2267':
+            return 'http://127.0.0.1:5500/js/web9.html';
+            
+            case 'Giàyadidas Samba Og ‘Core Black’ IH3119':
+            return 'http://127.0.0.1:5500/js/web10.html';
+            case 'Giày adidas Forum Exhibit Low Off White Shadow Navy GX4121':
+            return 'http://127.0.0.1:5500/js/web11.html';
+            
+            case 'Giày adidas Forum Low ‘Black White’ HQ1494':
+            return 'http://127.0.0.1:5500/js/web12.html';
+            case 'Giày adidas Forum Exhibit Low ‘Chalky Brown’ GW6347':
+            return 'http://127.0.0.1:5500/js/web13.html';
+            case 'Giày Home Alone x adidas Forum Low ‘White Red’ GZ4378<':
+            return 'http://127.0.0.1:5500/js/web14.html';
+            case 'Giày adidas Forum Low ‘Royal Blue’ FY7974':
+            return 'http://127.0.0.1:5500/js/web15.html';
+            case 'Giày adidas Forum Exhibit Low 2.0 ‘Kream’ ID1849':
+            return 'http://127.0.0.1:5500/js/web16.html';
+            case 'Giày adidas Forum Exhibit Low ‘Sky Tint’ GW6348':
+            return 'http://127.0.0.1:5500/js/web17.html';
+            case 'Giày adidas Forum Low Trắng Đen FY7757':
+            return 'http://127.0.0.1:5500/js/web18.html';
+            case 'Giày adidas Forum Low Off White Magic Beige HQ1492':
+            return 'http://127.0.0.1:5500/js/web19.html';
+            case 'Giày adidas Forum Low ‘White Iridescent’ GX5061':
+            return 'http://127.0.0.1:5500/js/web20.html';
+            
+        default:
+          return 'http://127.0.0.1:5500/js/trangchu.html'; // URL mặc định hoặc xử lý khi không có sản phẩm nào phù hợp
+      }
+    }
+  });
+</script>
+</body>
+</html>

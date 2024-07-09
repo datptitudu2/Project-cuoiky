@@ -1,0 +1,442 @@
+
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+       
+        header {
+            background-color: rgb(233,150,122);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            height:100px
+           
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            color:black;
+            text-decoration: none;
+            padding-bottom:30px;
+            padding-right:60px;
+            font-size:30px
+        }
+
+        nav ul li div {
+            display: inline-block;
+            padding-bottom: 30px;
+            padding-right: 60px;
+        }
+        
+        nav ul li div#dang_nhap1 {
+            font-size: 100px;
+            color: #222222;
+        }
+        
+        
+        
+        nav ul li a:hover, nav ul li div:hover {
+            cursor:pointer;
+            
+            
+        }
+
+        nav ul li a:hover {
+            cursor:pointer;
+            color:white
+            
+           
+        }
+
+        .hero {
+            background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20230611/pngtree-wall-with-shoes-on-it-image_2881393.jpg');
+            background-size: cover;
+            height: 900px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            margin-top: 60px; 
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+       
+        .shoe-container {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .shoe {
+            margin: 10px;
+            text-align: center;
+            
+        }
+
+        .shoe img {
+            width: 400px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .shoe h3 {
+            margin: 5px 0;
+            font-size:12px
+        }
+
+        .shoe h4 {
+            color: #888;
+            margin: 5px 0;
+        }
+
+        .buy-button {
+            background-color: #ca2b07f4;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .buy-button:hover {
+            background-color: #0fca34;
+        }
+
+        .click {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .about-us a {
+            display: block;
+            margin-bottom: 10px; 
+            text-decoration: none; 
+        }
+        .about-us {
+            background-color:	rgb(248,248,255);
+            padding: 10px 20px;
+            text-align: center;
+            margin-top:100px;
+            height:500px;
+            
+        }
+
+        .about-us h2 {
+            margin-bottom: 20px;
+        }
+
+       
+        .contact {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            color: #888;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .contact-form button {
+            background-color: #ca2b07f4;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #0fca34;
+        }
+
+       
+
+       
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        #nhap1, #nhap2, #nhap3, .newsletter {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .newsletter {
+            text-align: center;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .newsletter-form label {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .newsletter-form input {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .newsletter-form button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #218838;
+        }
+
+       
+        #nhap2 a, #nhap3 a {
+            text-decoration: none;
+            color: #000;
+            transition: color 0.3s ease;
+        }
+
+        #nhap2 a:hover, #nhap3 a:hover {
+            color: #ca2b07f4;
+        }
+        #change1 {
+            background-color:#ca2b07f4
+        }
+        #change1:hover {
+            background-color:black;
+            color:white;
+            cursor:pointer
+        }
+        #change1 {
+            width: 100px;
+            height: 50px;
+        }
+
+        /* Thêm CSS mới */
+        
+      #more-shoes{
+        width:100%;
+        
+      }
+
+     
+        .button {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 400px;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .button-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #messengerButton {
+            border-radius: 50%;
+            background-image: url('https://banghieuminhkhang.com/upload/Thu-vien/logo-facebook-vector-11.jpg');
+            margin-bottom:40px
+        }
+           
+        #zaloButton {
+            border-radius:50%;
+            background-image:url('https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-App-Rec.png');
+         
+            
+        }
+        #text1 {
+            font-size:large;
+            text-align:center
+        }
+        #icon3 {
+            margin-left:30px
+        }
+        
+        .search-container {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-left: -30px;
+            border-radius: 5px;
+        }
+
+        .search-container input {
+            width: 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            font-size: 16px;
+            transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            
+            background-color:white;
+            border:1px solid black
+        }
+
+       
+
+        .search-icon {
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        .results {
+            position: absolute;
+            top: calc(100% + 5px);
+            width: 170px;
+            margin-left:1620px;
+            margin-top:-48px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+           
+        }
+
+        .results.active {
+            display: block;
+          
+            
+        }
+
+        .result-item {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .result-item:hover {
+            background-color: #f0f0f0;
+        }
+        #img1 {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-right: 60px; /* Thêm khoảng cách bên phải cho hình ảnh */
+            vertical-align: middle; /* Căn giữa hình ảnh với các liên kết */
+        }
+
+        #img1:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        #icon1 i, #icon2 i {
+            font-size: 24px;
+            
+        }
+/*ảnh sau 3s*/
+        .khung {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            margin-left:0;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            margin-top:120px;
+            
+        }
+
+        .anh {
+            display: flex;
+            transition: transform 1s ease-in-out;
+            width: 600px;
+        }
+
+        .anh img {
+            width: 600px;
+            border: none;
+            height:600px
+        }
+    .khung-main {
+        display:flex
+    }
+    div.khung1 img {
+        width:700px;
+        height:600px;
+        margin-top:120px
+    }
+    div.khung2 img {
+        width:1000px;
+        height:600px;
+        margin-top:120px
+    }
+
+
+   

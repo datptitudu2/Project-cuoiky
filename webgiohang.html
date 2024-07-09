@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap" rel="stylesheet">
+    <style>
+         header {
+        background-color: rgb(233,150,122);
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        height:100px
+       
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: inline;
+    }
+
+    nav ul li a {
+        display: inline-block;
+        color:#222222;
+        text-decoration: none;
+        padding-bottom:30px;
+        padding-right:60px;
+        font-size:30px
+    }
+
+    nav ul li div {
+        display: inline-block;
+        padding-bottom: 30px;
+        padding-right: 60px;
+    }
+    
+    
+    
+    nav ul li div#icon1 i,
+    nav ul li div#icon2 i,
+    nav ul li div#icon3 i{
+        font-size: 35px; 
+        color: #222222; 
+    }
+    
+    nav ul li a:hover, nav ul li div:hover {
+        color:white;
+        
+        
+    }
+    
+       
+    
+    #img1 {
+        max-width: 100px;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin-right: 60px; /* Thêm khoảng cách bên phải cho hình ảnh */
+        vertical-align: middle; /* Căn giữa hình ảnh với các liên kết */
+    }
+
+    #img1:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    #icon1 i, #icon2 i {
+        font-size: 24px; /* Change this value to the desired size */
+    }
+    /* phần sau */
+.important1 {
+    display:flex;
+    margin-bottom:50px
+    
+    
+}
+    #underline {
+        border-bottom: 1px solid black;
+        display: inline-block;
+        padding-bottom: 10px;
+        width: 1180px;
+        margin-left: 20px;
+        margin-top:150px
+    }
+    #gio-hang1 {
+        margin-left: 20px;
+        height: 100px;
+        background-color: antiquewhite;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex; /* Sử dụng Flexbox */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        padding: 0 20px;
+        width:1200px;
+        margin-top:80px
+    }
+    #gio-hang1 span {
+        margin-right: 40px;
+    }
+    #span1 {
+        margin-left:20px
+    }
+    #span2 {
+        margin-left: 700px;
+    }
+    #gio-hang2 {
+        background-color: lightgreen;
+        width: 1200px;
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column; /* Chỉnh lại thành cột để các sản phẩm được xếp dọc */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        padding: 20px;
+    }
+    .product-item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .product-item img {
+        width: 100px;
+        height: 100px;
+        margin-left: 10px;
+        border-style: solid;
+    }
+    .soluong-input {
+        width: 50px;
+        height: 40px;
+        margin-left: 20px;
+    }
+    
+    
+    .button-buy-now {
+        width: 80px;
+        height: 40px;
+        text-align: center;
+        margin-left: 20px;
+        margin-top:50px
+    }
+    .xoa-san-pham {
+        margin-left: 20px;
+        cursor: pointer;
+        background-color:	rgb(255,215,0);
+        border-radius:2px
+    }
+    .phan-cap-nhat{
+       
+       
+        margin-top:300px;
+        background-color:beige;
+        margin-left:200px;
+        width:630px;
+        height:400px
+
+        
+    }
+  
+    
+    .button-buy-now:hover {
+        background-color:black;
+        color:white
+    }
+    .button-buy-now {
+        margin-top:120px;
+        width:200px;
+        height:60px;
+        text-align:center;
+        font-size:20px;
+        background-color:#f0f0f0;
+        border-radius:20px;
+        margin-top:20px
+    }
+    .button-update {
+        width:200px;
+        height:60px;
+        text-align:center;
+        font-size:20px;
+        background-color:aliceblue;
+        border-radius:20px;
+        margin-left:200px;
+        margin-top:20px
+    }
+    
+    
+    #icon6 {
+       font-size:40px;
+       margin-left:22px;
+       
+    }
+    
+    /* phần css theem */
+
+    #tong-tien {
+        margin-top:50px
+    }
+
+    #tong-so-luong,#tong-tien {
+        font-size:20px
+    }
+    #phi-ship {
+        font-size:20px;
+        margin-top:20px;
+        border-bottom: 2px solid black;
+        display: inline-block;
+        padding-bottom: 50px;
+        width: 550px;
+        margin-left: 20px;
+       
+        
+    }
+    .phancapnhat1 {
+        border-style:solid;
+        height:400px
+       
+    }
+    #icon7 {
+        font-size:30px;
+        margin-top:60px;
+        font-family:Arial, Helvetica, sans-serif
+    }
+    #phu1 {
+        font-size:20px;
+        margin-top:60px
+    }
+    #phụ {
+        display:flex
+    }
+
+    .payment-option {
+        margin: 10px 0;
+    }
+    .payment-option input[type="radio"] {
+        margin-right: 10px;
+        
+    }
+    
+    .form-inside {
+        flex: 1 1 calc(33.33% - 20px);
+        display: flex;
+        flex-direction: column;
+    }
+    .form-inside input,
+    .form-inside select,
+    .form-inside textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .form-inside label {
+        margin-bottom: 5px;
+    }
+    @media (max-width: 600px) {
+        .form-inside {
+            flex: 1 1 100%;
+        }
+    }
+    .form1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width:1000px;
+    margin-top:50px;
+    margin-left:100px ;
+    
+    
+    }
+        /* css cho phần hiện thông tin giảm giá */
+        .an {
+            display: none;
+        }
+        .thongtin-thanhtoan {
+            display: none; /* Ẩn vùng thông tin thanh toán khi chưa chọn */
+            border: 1px solid #ccc;
+            height:600px;
+            margin-top: 10px;
+            background-color: #f9f9f9;
+            text-align:center;
+            margin-bottom:50px
+        }
+        /* qr code */
+        .qrcode {
+            width:400px;
+            height:400px;
+            margin-left:60px
+        }
+        .thongtin-thanhtoan {
+            display: none; 
+        }
+        .note {
+            margin-top:40px;
+    width: 100%;
+    height: 150px; 
+    resize: vertical; 
+  }
+  #note1 {
+    margin-left:20px;
+    margin-top:20px
+  }
+  .form-inside label {
+        font-size: 18px; /* Đặt kích cỡ chữ cho nhãn là 18px */
+        font-weight: bold; /* Đặt độ đậm cho nhãn */
+    }
+    .form-inside input[type="text"],
+    .form-inside input[type="email"],
+    .form-inside input[type="tel"],
+    .form-inside select {
+        font-size: 16px; /* Đặt kích cỡ chữ cho các ô nhập liệu và select là 16px */
+      
+        width:200px
+    }
+    .form-main {
+        border-style:dashed;
+        width:620px;
+        height:100px;
+        text-align:center;
+        
+    }
+    .form-main label {
+        font-size: 20px; 
+        margin-top: 50px; 
+    }
+
+
+ /*phan cuoi */
+ .about-us a {
+            display: block;
+            margin-bottom: 10px; /* Điều chỉnh khoảng cách giữa các dòng */
+            text-decoration: none; /* Loại bỏ gạch chân của liên kết nếu muốn */
+        }
+        .about-us {
+            background-color:	rgb(248,248,255);
+            padding: 10px 20px;
+            text-align: center;
+            margin-top:400px;
+            height:500px
+        }
+        .about-us h2 {
+            margin-bottom: 20px;
+        }
+        .container2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            font-size:18px
+        }
+        #nhap1, #nhap2, #nhap3, .newsletter {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .newsletter {
+            text-align: center;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .newsletter-form label {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .newsletter-form input {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .newsletter-form button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #218838;
+        }
+
+       
+        #nhap2 a, #nhap3 a {
+            text-decoration: none;
+            color: #000;
+            transition: color 0.3s ease;
+        }
+
+        #nhap2 a:hover, #nhap3 a:hover {
+            color: #ca2b07f4;
+        }
+
+        #icon1 i, #icon2 i {
+            font-size: 24px;
+            
+        }
+
+
+        
+        .search-container {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-left: -30px;
+            border-radius: 5px;
+        }
+
+        .search-container input {
+            width: 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            font-size: 16px;
+            transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            
+            background-color:white;
+            border:1px solid black
+        }
+
+       
+
+        .search-icon {
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        .results {
+            position: absolute;
+            top: calc(100% + 5px);
+            width: 170px;
+            margin-left:1580px;
+            margin-top:-48px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: white;
+            display: none;
+            overflow: hidden;
+           
+        }
+
+        .results.active {
+            display: block;
+          
+            
+        }
+
+        .result-item {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .result-item:hover {
+            background-color: #f0f0f0;
+        }
+        .button {
+    width: 30px;
+    height: 50px;
+    margin-bottom: 400px;
+    cursor: pointer;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#messengerButton {
+            border-radius: 50%;
+            background-image: url('https://banghieuminhkhang.com/upload/Thu-vien/logo-facebook-vector-11.jpg');
+            margin-bottom:40px;
+            width:60px;
+            height:60px
+        }
+           
+        #zaloButton {
+            border-radius:50%;
+            background-image:url('https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-App-Rec.png');
+            width:60px;
+            height:60px
+            
+        }
+        
+        #accountInfo {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    #userInfo {
+        display: none;
+        position: absolute;
+        margin-left:40px;
+        background-color: #f9f9f9;
+        width: 153px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      
+        
+        
+    }
+
+    #accountInfo:hover #userInfo {
+        display: block;
+    }
+    #userInfo a {
+        color: black;
+        padding: 12px 16px;
+        width:120px;
+        text-decoration: none;
+        display: block;
+        font-size:15px
+    }
+
+    #userInfo a:hover {
+        background-color: #f1f1f1;
+        color:#CC9966
+    }
+
+
+    #icon2 {
+        font-size: 30px;
+        color: #000;
+        margin-left:20px
+    }
+</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a><img src="https://ibrand.vn/wp-content/uploads/2022/10/logo-shop-giay-8.jpg" id="img1"></a>
+                <li><a href="http://127.0.0.1:5500/js/trangchuweb.html">Trang chủ</a></li>
+                <li><a href="http://127.0.0.1:5500/js/websanpham.html">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+                <li><a href="http://127.0.0.1:5500/js/webchinhsach.html">Chính sách bảo hành</a></li>
+                <li><a href="http://127.0.0.1:5500/js/webgiohang.html"  ><i class='bx bx-cart' id="icon1"  style="font-size:30px"></i></a></li>
+                <li>
+                    <div class="search-container">
+                      <input type="text" id="search" placeholder="Tìm kiếm sản phẩm" required style="width:150px;">
+                      <span class="search-icon" id="search-icon"><i class='bx bx-search-alt-2' id="icon3"style="font-size:30px"></i></span>
+                    </div>
+                    </li>
+                    <div class="results" id="results"></div>
+                    <li><div id="accountInfo" style="margin-left:5px">
+                        <i class='bx bx-user-circle' id="icon2"style="font-size:30px;"  onclick="myfunctionxx()"></i>
+                            <div id="userInfo" >
+                                <!-- Thông tin người dùng sẽ được hiển thị ở đây -->
+                              
+                            </div>
+                        </div>
+                        </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="important1">
+    <div class="main">
+        <div class="main1">
+            <i class='bx bx-cart-alt' id="icon6"></i>
+            <h1 id="underline">Giỏ Hàng</h1>
+        </div>
+        <div id="gio-hang1">
+            <span id="span1">Sản phẩm</span>
+            <span id="span2">Số lượng</span>
+            <span id="span3">Giá tiền</span>   
+            <span id="span4">Tổng tiền</span>
+        </div>
+        <div id="gio-hang2">
+            
+        </div>
+    </div>
+        <div class="phan-cap-nhat">
+            <div class='phancapnhat1'>
+            <h1 style="font-size:30px;margin-left:30px">Tạm tính</h1>
+            <div id="tong-so-luong"style="margin-left:30px"></div>
+            <div id="phi-ship"style="margin-left:30px"><b>Phí ship:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;35000đ</div>
+            <div id="tong-tien"style="margin-left:30px"></div>
+            </div>
+            <p style="font-size:20px;font-family:Arial, Helvetica, sans-serif">Bạn có mã giảm giá?<button id="button1" type=button onclick="myfunction()" style="border-style:none;background-color:white;font-size:20px;font-family:Arial, Helvetica, sans-serif;cursor:pointer">Ấn vào đây để sử dụng</button></p>
+            <div id="thong-tin" class="thong-tin an">
+                <form class="form-main">
+                    <label for="thong-tin1" id="label1" style="font-size:20px;">Nếu bạn có mã giảm giá,vui lòng điền vào phía bên dưới</label><br>
+                    <input type="text" id="thong-tin1" name="thong-tin1" placeholder="Mã ưu đãi" style="width:300px;margin-top:22px;height:30px">   
+                    <button type="button" id="button2"onclick="apdung()" style="height:30px;background-color:coral;cursor:pointer">Áp dụng</button>
+                    
+                </form>
+            </div> 
+            <div id="phụ">
+                <i id='icon7' class='bx bx-credit-card' ></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div id="phu1"><b>Phương thức vận chuyển</b></div>
+            </div>
+
+            <form>
+                <div class="payment-option">
+                    <input type="radio" id="cash" name="payment-method" value="cash" checked>
+                    <label for="cash" style="font-size:20px">Thanh toán khi nhận hàng</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="payoo" name="payment-method" value="payoo"  onchange="infothanhtoan()">
+                    <label for="payoo" style="font-size:20px">Thẻ ATM/JCB/QRCode Napas</label>
+                    
+                </div>
+            </form>
+
+        <div id="tt-thanhtoan" class="thongtin-thanhtoan">
+        <h1>Thông tin thanh toán</h1>
+        <h3>Vui lòng quét QR Code </h3>
+        <img src="qrcode.jpg" alt="anh qr" class="qrcode">
+         </div>
+         <button type="button" class="button-buy-now" style="margin-left:350px;cursor:pointer" onclick="storeEmail()">Đặt Hàng </button>  
+              
+        </div>
+
+
+</div>
+   
+<div class="form1">
+    <div class="form-inside">
+        <label for="ho">Họ *</label>
+        <input type="text" id="ho" name="ho" required>
+    </div>
+    <div class="form-inside">
+        <label for="ten">Tên *</label>
+        <input type="text" id="ten" name="ten" required>
+    </div>
+    <div class="form-inside">
+        <label for="sdt">Số điện thoại *</label>
+        <input type="tel" id="sdt" name="sdt" required>
+    </div>
+    <div class="form-inside">
+        <label for="tinh-thanh">Tỉnh/Thành phố *</label>
+        <select id="tinh-thanh" name="tinh-thanh" required style="width:220px">
+            <option value="">Chọn Tỉnh/Thành phố</option>
+        </select>
+</div>
+<div class="form-inside">
+    <label for="quan-huyen">Quận/Huyện *</label>
+    <select id="quan-huyen" name="quan-huyen" required style="width:220px">
+        <option value="">Chọn Quận/Huyện</option>
+       
+    </select>
+</div>
+<div class="form-inside">
+    <label for="phuong-xa">Phường/Xã *</label>
+    <input type="text" id="phuong-xa" name="phuong-xa" placeholder="Phường/Xã *">
+</div>
+<div class="form-inside">
+    <label for="dia-chi">Số nhà, đường *</label>
+    <input type="text" id="dia-chi" name="dia-chi" required>
+</div>
+<div class="form-inside">
+    <label for="email" style="margin-left:-170px">Email *</label>
+    <input type="email" id="email" name="email" required style="width:200px;margin-left:-170px"> 
+</div>
+
+<textarea id="note" name="note" class="note" placeholder="Ghi chú"></textarea> 
+
+</div>
+<div id="phancuoi">
+    <div class="about-us" id="about">
+        <h1 style="font-family: Playwrite NO, cursive;font-size:30px">Về chúng tôi</h1>
+        <div class="container2">
+            <div id="nhap1">
+                <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Cơ sở 1: 122 Hoàng Quốc Việt</h3>
+                <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Cơ sở 2: km10 Nguyễn Trãi</h3>
+            </div>
+            <div id="nhap2">
+                <h2 style="font-family: Playwrite NO, cursive;font-size:20px">Hướng dẫn</h2>
+                <a href="#">Hướng dẫn mua hàng</a><br>
+                <a href="#">Giao nhận và thanh toán</a><br>
+                <a href="#">Đổi trả và bảo hành</a><br>
+                <a href="#">Đăng kí thành viên</a><br>
+                <a href="#">Tra cứu đơn hàng</a>
+            </div>
+            <div id="nhap3">
+                <h3 style="font-family: Playwrite NO, cursive;font-size:20px">Chính sách bảo hành</h3>
+                <a href="http://127.0.0.1:5500/js/webchinhsach.html#">Chính sách đổi hàng</a><br>
+                <a href="http://127.0.0.1:5500/js/webtracuu.html">Theo dõi sản phẩm</a><br>
+                <a href="http://127.0.0.1:5500/js/webchinhsach.html">Chính sách thanh toán</a>
+            </div>
+            <div class="newsletter">
+                <h2 style="font-family: Playwrite NO, cursive;font-size:20px">Đăng ký nhận thông tin mới nhất</h2>
+                <p>Nhận thông tin sản phẩm mới nhất, tin khuyến mãi và nhiều hơn nữa.</p>
+                <form class="newsletter-form" action="/submit-form" method="POST">
+                    <label for="email">Email của bạn:</label>
+                    <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required><br>
+                    <button type="submit">Đăng ký</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="button-container">
+    <div class="button" id="messengerButton"></div>
+    <div class="button" id="zaloButton"></div>
+</div>
+<script >
+    document.getElementById('zaloButton').addEventListener('click', function() {
+    window.location.href = 'https://zalo.me/g/rrjgou055'; })
+    document.getElementById('messengerButton').addEventListener('click', function() {
+        window.location.href = 'https://www.facebook.com/dattkdz/about'; })
+     
+// lưu ý cái này là thông tin tài khoản//
+document.addEventListener('DOMContentLoaded', function() {
+    const storedUserInfo = localStorage.getItem('userInfo');
+    const userInfo = storedUserInfo ? JSON.parse(storedUserInfo) : null;
+    const userInfoDiv = document.getElementById('userInfo');
+
+    if (userInfo && userInfo.ten) {
+        // Nếu đã đăng nhập
+        userInfoDiv.innerHTML = `<p style="margin-left:20px;color:black">Xin chào, ${userInfo.ten}</p><a href="#" onclick="logout()">Đăng xuất</a>`;
+    } else {
+        // Nếu chưa đăng nhập
+        userInfoDiv.innerHTML = `
+            <a href="http://127.0.0.1:5500/js/login.html">Đăng nhập</a>
+            <a href="http://127.0.0.1:5500/js/dangky.html">Đăng ký</a>
+        `;
+    }
+});
+
+function logout() {
+    localStorage.removeItem('userInfo'); // Xóa thông tin người dùng khi đăng xuất
+    window.location.href = 'http://127.0.0.1:5500/js/login.html'; // Chuyển hướng về trang đăng nhập
+}
+ 
+function myfunctionxx(){
+        window.location.href='http://127.0.0.1:5500/js/trangthongtin.html';
+    }
+
+
+
+
+
+    function myfunction() {
+    var thongTinDiv = document.getElementById('thong-tin');
+thongTinDiv.classList.toggle('an');
+}
+function apdung() {
+    var key=document.getElementById('thong-tin1').value
+    if (key==='NguyenTienDatPTIT') {
+        window.alert('Mã đã được áp dụng')
+    
+    }
+    else {
+        window.alert('Mã không hợp lệ')
+    }
+}
+//qr code
+
+function infothanhtoan() {
+    var payooRadio = document.getElementById('payoo');
+    var paymentInfoDiv = document.getElementById('tt-thanhtoan');
+    const userInfo = JSON.parse(localStorage.getItem('userInfo')) || {};
+    // Nếu người dùng chọn Thẻ ATM/JCB/QRCode Napas
+    if (payooRadio.checked && (!userInfo.ten || userInfo.ten.trim() === ''))  {
+        window.alert('Vui lòng đăng nhập trước khi thanh toán!')
+        paymentInfoDiv.style.display = 'block'; 
+    } else {
+        paymentInfoDiv.style.display = 'none';
+    }
+}
+ 
+function storeEmail() {
+            var email = document.getElementById('email').value;
+            if (email) {
+                localStorage.setItem('userEmail', email);
+                alert('Thanh toán thất bại')
+            } else {
+                alert('Chúc mừng bạn đã thanh toán thành công');
+            }
+        }
+
+
+const provinces = [
+    { tentp: "ha-noi", keytp: "Hà Nội" },
+    { tentp: "ho-chi-minh", keytp: "TP. Hồ Chí Minh" },
+    { tentp: "da-nang", keytp: "Đà Nẵng" },
+    { tentp: "hai-phong", keytp: "Hải Phòng" },
+    { tentp: "can-tho", keytp: "Cần Thơ" },
+    { tentp: "bien-hoa", keytp: "Biên Hòa" },
+    { tentp: "nha-trang", keytp: "Nha Trang" },
+    { tentp: "hue", keytp: "Huế" },
+    { tentp: "vinh", keytp: "Vinh" },
+    { tentp: "thanh-hoa", keytp: "Thanh Hóa" },
+    { tentp: "da-lat", keytp: "Đà Lạt" },
+    { tentp: "quy-nhon", keytp: "Quy Nhơn" },
+    { tentp: "vung-tau", keytp: "Vũng Tàu" },
+    { tentp: "ninh-binh", keytp: "Ninh Bình" },
+    { tentp: "thai-nguyen", keytp: "Thái Nguyên" },
+    { tentp: "phu-quoc", keytp: "Phú Quốc" },
+    { tentp: "my-tho", keytp: "Mỹ Tho" },
+    { tentp: "long-xuyen", keytp: "Long Xuyên" },
+    { tentp: "cao-lanh", keytp: "Cao Lãnh" }
+];
+
+const districts = {
+    "ha-noi": ["Ba Đình", "Hoàn Kiếm", "Tây Hồ", "Long Biên", "Cầu Giấy", "Đống Đa", "Hai Bà Trưng", "Hoàng Mai", "Thanh Xuân", "Sóc Sơn", "Đông Anh", "Gia Lâm", "Nam Từ Liêm", "Thanh Trì", "Bắc Từ Liêm", "Mê Linh"],
+    "ho-chi-minh": ["Quận 1", "Quận 2", "Quận 3", "Quận 4", "Quận 5", "Quận 6", "Quận 7", "Quận 8", "Quận 9", "Quận 10", "Quận 11", "Quận 12", "Bình Thạnh", "Gò Vấp", "Phú Nhuận", "Tân Bình", "Tân Phú", "Bình Tân", "Củ Chi", "Hóc Môn", "Bình Chánh", "Nhà Bè", "Cần Giờ"],
+    "da-nang": ["Hải Châu", "Thanh Khê", "Sơn Trà", "Ngũ Hành Sơn", "Liên Chiểu", "Cẩm Lệ", "Hòa Vang", "Hoàng Sa"],
+    "hai-phong": ["Hồng Bàng", "Lê Chân", "Ngô Quyền", "Kiến An", "Hải An", "Dương Kinh", "Đồ Sơn", "An Dương", "An Lão", "Kiến Thụy", "Thủy Nguyên", "Tiên Lãng", "Vĩnh Bảo", "Cát Hải", "Bạch Long Vĩ"],
+    "can-tho": ["Ninh Kiều", "Bình Thủy", "Cái Răng", "Ô Môn", "Thốt Nốt", "Vĩnh Thạnh", "Cờ Đỏ", "Phong Điền", "Thới Lai"],
+    "bien-hoa": ["Tân Phong", "Quyết Thắng", "Thống Nhất", "Tân Mai", "Thành Bình", "Hòa Bình", "An Bình", "Tân Biên", "Tân Hòa", "Tân Hiệp", "Tân Phong", "Tân Tiến", "Tam Hòa", "Tam Hiệp", "Tân Phong", "Bình Đa", "Long Bình", "Long Bình Tân", "Phước Tân", "Tân Vạn", "Thạnh Phú"],
+    "nha-trang": ["Vĩnh Hòa", "Vĩnh Hải", "Vĩnh Phước", "Ngọc Hiệp", "Vĩnh Thọ", "Xương Huân", "Vạn Thắng", "Vạn Thạnh", "Phương Sài", "Phương Sơn", "Phước Hải", "Phước Tân", "Lộc Thọ", "Tân Lập", "Phước Tiến", "Phước Hòa", "Phước Long", "Vĩnh Nguyên", "Vĩnh Trường", "Vĩnh Lương", "Vĩnh Phương", "Vĩnh Ngọc", "Vĩnh Thái", "Phước Đồng"],
+    "hue": ["Phú Nhuận", "Phú Hội", "Phú Hậu", "Thuận Hòa", "Thuận Lộc", "Thuận Thành", "Thuận An", "Thủy Biều", "Vĩnh Ninh", "Trường An", "Xuân Phú", "Hương Sơ", "Thủy Xuân", "An Cựu", "An Đông"],
+    "vinh": ["Hồng Sơn", "Trường Thi", "Đội Cung", "Lê Lợi", "Quang Trung", "Đức Thọ", "Hà Huy Tập", "Hưng Bình", "Bến Thủy", "Cửa Nam", "Đông Vĩnh", "Vinh Tân", "Hưng Dũng", "Hưng Lộc", "Nghi Kim", "Nghi Liên", "Nghi Ân", "Hưng Chính"],
+    "thanh-hoa": ["Đông Sơn", "Quảng Hưng", "Quảng Thịnh", "Quảng Thành", "Quảng Tâm", "Quảng Đông", "Quảng Phú", "Quảng Phúc", "Quảng Cát", "Quảng Tiến", "Quảng Ngọc", "Quảng Vinh", "Thiệu Dương", "Thiệu Khánh", "Thiệu Vân"],
+    "da-lat": ["Phường 1", "Phường 2", "Phường 3", "Phường 4", "Phường 5", "Phường 6", "Phường 7", "Phường 8", "Phường 9", "Phường 10", "Phường 11", "Phường 12"],
+    "quy-nhon": ["Lê Lợi", "Trần Hưng Đạo", "Ngô Mây", "Nguyễn Văn Cừ", "Đống Đa", "Quang Trung", "Bùi Thị Xuân", "Trần Quang Diệu", "Phan Bội Châu", "Nguyễn Trãi", "Lý Thường Kiệt", "Lý Tự Trọng", "Trần Phú", "Hải Cảng", "Đống Đa", "Ghềnh Ráng"],
+    "vung-tau": ["1 Tháng 4", "1 Tháng 5", "Phước Thắng", "Rạch Dừa", "Thắng Nhì", "Thắng Tam", "Nguyễn An Ninh", "Võ Thị Sáu", "Phước Hưng", "Bình Giã", "Bình Thạnh", "Nguyễn Thái Bình", "Hòa Long", "Phước Hiệp", "Long Tâm", "Long Toàn", "Phước Trung"],
+    "ninh-binh": ["Ninh Khánh", "Ninh Nhất", "Ninh Phúc", "Đinh Tiên Hoàng", "Đông Thành", "Nam Thành", "Bích Đào", "Phúc Thành", "Nam Bình", "Ninh Sơn", "Thanh Bình", "Tân Thành"],
+    "thai-nguyen": ["Quang Trung", "Trung Thành", "Tân Thịnh", "Tân Thành", "Tân Lập", "Phan Đình Phùng", "Hoàng Văn Thụ", "Trần Hưng Đạo", "Tân Long", "Gia Sàng", "Túc Duyên", "Quán Triều", "Thắng Lợi", "Phú Xá"],
+    "phu-quoc": ["Dương Đông", "An Thới", "Cửa Dương", "Cửa Cạn", "Gành Dầu", "Hàm Ninh", "Bãi Thơm", "Hòn Thơm", "Thổ Châu"],
+    "my-tho": ["Phường 1", "Phường 2", "Phường 3", "Phường 4", "Phường 5", "Phường 6", "Phường 7", "Phường 8", "Phường 9", "Phường 10"],
+    "long-xuyen": ["Mỹ Bình", "Mỹ Long", "Mỹ Xuyên", "Mỹ Hòa", "Mỹ Phước", "Mỹ Quý", "Mỹ Thới", "Mỹ Thạnh", "Mỹ Hưng"],
+    "cao-lanh": ["Phường 1", "Phường 2", "Phường 3", "Phường 4", "Phường 5", "Phường 6", "Phường 7", "Phường 8", "Phường 9", "Phường 10", "Phường 11"]
+};
+
+// Lưu dữ liệu vào local storage
+localStorage.setItem('provinces', JSON.stringify(provinces));
+localStorage.setItem('districts', JSON.stringify(districts));
+
+
+const dataprovince = JSON.parse(localStorage.getItem('provinces'));
+const datadistrict = JSON.parse(localStorage.getItem('districts'));
+
+// Thêm các tùy chọn tỉnh/thành phố vào select
+const tinhThanhSelect = document.getElementById('tinh-thanh');
+dataprovince.forEach(province => {
+    const option = document.createElement('option');
+    option.value = province.tentp;
+    option.textContent = province.keytp;
+    tinhThanhSelect.appendChild(option);
+});
+
+// Cập nhật quận/huyện khi chọn tỉnh/thành phố
+tinhThanhSelect.addEventListener('change', function() {
+    const quanHuyenSelect = document.getElementById('quan-huyen');
+    const selectedProvince = this.value;
+    const districts = datadistrict[selectedProvince] || [];
+
+    
+    while (quanHuyenSelect.firstChild) {
+        quanHuyenSelect.removeChild(quanHuyenSelect.firstChild);
+    }
+
+   
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.textContent = 'Chọn Quận/Huyện';
+    quanHuyenSelect.appendChild(defaultOption);
+
+    // Thêm các tùy chọn quận/huyện mới
+    districts.forEach(district => {
+        const option = document.createElement('option');
+        option.value = district;
+        option.textContent = district;
+        quanHuyenSelect.appendChild(option);
+    });
+});
+
+if(!localStorage.getItem('sanpham')) {
+    const sanpham = ['Giày Air Jordan 6 Rings ‘Tropical Twist’ (GS) 323419-115',
+       'Giày (WMNS) Air Jordan 6 Retro GORE-TEX ‘Brown Kelp’ FD1643-300',
+        'Giày Converse Run Star Hi ‘Black’ 166800C', 
+        'Giày Nike Dunk Low EMB ‘NBA 75th Anniversary Chicago’ DD3363-100',
+      'Giày nam Nike Air Force 1 ID ‘Gucci’ CT7875-994',
+      'Giày nam Nike Air Force 1 Low ‘Under Construction – White’ BQ4421-100',
+    'Giày Nike Air Jordan 1 Retro High OG ‘Heritage’ 555088-161',
+    'Giày adidas Alphabounce Ek ‘Triple Black’ GY5403',
+    'Giày adidas Alphabounce Ek ‘Black/Orange’ GW2267',
+    'Giày adidas Samba Og ‘Core Black’ IH3119',
+    'Giày adidas Forum Exhibit Low Off White Shadow Navy GX4121',
+    'Giày adidas Forum Low ‘Black White’ HQ1494',
+    'Giày adidas Forum Exhibit Low ‘Chalky Brown’ GW6347',
+    'Giày Home Alone x adidas Forum Low ‘White Red’ GZ4378',
+    'Giày adidas Forum Low ‘Royal Blue’ FY7974',
+    'Giày adidas Forum Exhibit Low 2.0 ‘Kream’ ID1849',
+    'Giày adidas Forum Exhibit Low ‘Sky Tint’ GW6348',
+    'Giày adidas Forum Low Trắng Đen FY7757',
+    'Giày adidas Forum Low Off White Magic Beige HQ1492',
+    'Giày adidas Forum Low ‘White Iridescent’ GX5061'];
+    localStorage.setItem('sanpham', JSON.stringify(sanpham));
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById('search');
+    const searchIcon = document.getElementById('search-icon');
+    const resultsContainer = document.getElementById('results');
+  
+    searchIcon.addEventListener('click', function() {
+      // Hiển thị hoặc ẩn thanh tìm kiếm
+      if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+        searchInput.style.display = 'block';
+        searchInput.focus();
+      } else {
+        searchInput.style.display = 'none';
+        resultsContainer.style.display = 'none';
+      }
+    });
+  
+    searchInput.addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      const sanpham = JSON.parse(localStorage.getItem('sanpham'));
+      const filteredSanpham = sanpham.filter(product => product.toLowerCase().includes(query));
+  
+      // Hiển thị kết quả tìm kiếm
+      resultsContainer.innerHTML = '';
+      filteredSanpham.forEach(product => {
+        const div = document.createElement('div');
+        div.classList.add('result-item');
+        div.textContent = product;
+        resultsContainer.appendChild(div);
+      });
+  
+      resultsContainer.style.display = filteredSanpham.length > 0 ? 'block' : 'none';
+  
+      // Xử lý sự kiện click vào kết quả tìm kiếm
+      const resultItems = document.querySelectorAll('.result-item');
+      resultItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const productName = this.textContent;
+          const productURL = generateProductURL(productName); // Chuyển hướng đến trang web của sản phẩm
+          window.location.href = productURL;
+          resultsContainer.style.display = 'none';
+        });
+      });
+    });
+  
+    // Đóng kết quả tìm kiếm khi click bên ngoài
+    document.addEventListener('click', function(event) {
+      if (!searchIcon.contains(event.target) && !resultsContainer.contains(event.target) && !searchInput.contains(event.target)) {
+        resultsContainer.style.display = 'none';
+        searchInput.style.display = 'none';
+      }
+    });
+  
+    // Hàm sinh URL dựa vào tên sản phẩm
+    function generateProductURL(productName) {
+      // Đây là một ví dụ đơn giản, bạn cần thay đổi phần này để phù hợp với cách bạn lưu trữ và xử lý sản phẩm
+      // Ví dụ, nếu bạn có một đối tượng JSON chứa thông tin sản phẩm và URL, bạn có thể lấy URL từ đối tượng đó.
+      switch (productName) {
+        case 'Giày Air Jordan 6 Rings ‘Tropical Twist’ (GS) 323419-115':
+          return 'http://127.0.0.1:5500/js/web001.html';
+        case 'Giày (WMNS) Air Jordan 6 Retro GORE-TEX ‘Brown Kelp’ FD1643-300':
+          return 'http://127.0.0.1:5500/js/web02.html';
+        // Thêm các sản phẩm khác tương tự
+        case 'Giày Nike Dunk Low EMB ‘NBA 75th Anniversary Chicago’ DD3363-100':
+            return 'http://127.0.0.1:5500/js/web3.html';
+          case 'Giày Converse Run Star Hi ‘Black’ 166800C':
+            return 'http://127.0.0.1:5500/js/web4.html';
+          // Thêm các sản phẩm khác tương tự
+          case 'Giày nam Nike Air Force 1 ID ‘Gucci’ CT7875-994':
+            return 'http://127.0.0.1:5500/js/web5.html';
+          
+            case 'Giày nam Nike Air Force 1 Low ‘Under Construction – White’ BQ4421-100':
+            return 'http://127.0.0.1:5500/js/web6.html';
+          // Thêm các sản phẩm khác tương tự
+         
+          case 'Giày Nike Air Jordan 1 Retro High OG ‘Heritage’ 555088-161':
+            return 'http://127.0.0.1:5500/js/web7.html';
+          case 'Giày adidas Alphabounce Ek ‘Triple Black’ GY5403':
+            return 'http://127.0.0.1:5500/js/web8.html';
+          // Thêm các sản phẩm khác tương tự
+          case 'Giày adidas Alphabounce Ek ‘Black/Orange’ GW2267':
+            return 'http://127.0.0.1:5500/js/web9.html';
+            
+            case 'Giàyadidas Samba Og ‘Core Black’ IH3119':
+            return 'http://127.0.0.1:5500/js/web10.html';
+            case 'Giày adidas Forum Exhibit Low Off White Shadow Navy GX4121':
+            return 'http://127.0.0.1:5500/js/web11.html';
+            
+            case 'Giày adidas Forum Low ‘Black White’ HQ1494':
+            return 'http://127.0.0.1:5500/js/web12.html';
+            case 'Giày adidas Forum Exhibit Low ‘Chalky Brown’ GW6347':
+            return 'http://127.0.0.1:5500/js/web13.html';
+            case 'Giày Home Alone x adidas Forum Low ‘White Red’ GZ4378<':
+            return 'http://127.0.0.1:5500/js/web14.html';
+            case 'Giày adidas Forum Low ‘Royal Blue’ FY7974':
+            return 'http://127.0.0.1:5500/js/web15.html';
+            case 'Giày adidas Forum Exhibit Low 2.0 ‘Kream’ ID1849':
+            return 'http://127.0.0.1:5500/js/web16.html';
+            case 'Giày adidas Forum Exhibit Low ‘Sky Tint’ GW6348':
+            return 'http://127.0.0.1:5500/js/web17.html';
+            case 'Giày adidas Forum Low Trắng Đen FY7757':
+            return 'http://127.0.0.1:5500/js/web18.html';
+            case 'Giày adidas Forum Low Off White Magic Beige HQ1492':
+            return 'http://127.0.0.1:5500/js/web19.html';
+            case 'Giày adidas Forum Low ‘White Iridescent’ GX5061':
+            return 'http://127.0.0.1:5500/js/web20.html';
+            
+        default:
+          return 'http://127.0.0.1:5500/js/trangchu.html'; // URL mặc định hoặc xử lý khi không có sản phẩm nào phù hợp
+      }
+    }
+  });
+
+
+
+
+
+function layGioHang() {
+    const cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    const gioHangContainer = document.getElementById('gio-hang2');
+    gioHangContainer.innerHTML = ''; 
+    let tongSoLuong = 0; 
+
+    cart.forEach((sanPham, index) => {
+        const tongTien = sanPham.price * sanPham.quantity;
+        gioHangContainer.innerHTML += `
+            <div class="product-item">
+                <img src="${sanPham.image}" alt="Product Image">
+                <span style="margin-left: 20px;">${sanPham.name}<br>Size: ${sanPham.size}</span>
+                <input type="number" class="soluong-input" value="${sanPham.quantity}" min="1" data-index="${index}" style="width: 50px; height: 40px; margin-left: 500px;">
+                <div style="margin-left: 50px;">${sanPham.price.toLocaleString('vi-VN')}đ</div>
+                <div class="tong-tien" style="margin-left: 50px;">${tongTien.toLocaleString('vi-VN')}đ</div>
+                <button class="xoa-san-pham" onclick="xoaSanPham(${index})">Xóa</button>
+            </div>
+        `;
+        tongSoLuong += sanPham.quantity;
+    });
+    const tongSoLuongElement = document.getElementById('tong-so-luong');
+    tongSoLuongElement.innerHTML = `<strong> Số lượng:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${tongSoLuong}</strong>`;
+
+   
+    tinhTongTien();
+}
+
+
+function tinhTongTien() {
+    const cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    let tongTien = 0;
+    const phiShip = 35000; 
+
+    
+    cart.forEach(sanPham => {
+        const giaSanPham = sanPham.price * sanPham.quantity;
+        tongTien += giaSanPham ;
+        
+    });
+    tongTien+=+phiShip;
+
+    const tongTienElement = document.getElementById('tong-tien');
+    tongTienElement.innerHTML = `<strong>Tổng tiền:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${tongTien.toLocaleString('vi-VN')}đ</strong>`;
+}
+
+document.addEventListener('DOMContentLoaded', layGioHang);
+document.addEventListener('change', function(event) {
+    if (event.target.classList.contains('soluong-input')) {
+        capnhat();
+    }
+});
+
+function xoaSanPham(index) {
+    let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('shoppingCart', JSON.stringify(cart));
+    layGioHang(); }
+
+function capnhat() {
+    const gioHangContainer = document.getElementById('gio-hang2');
+    const inputs = gioHangContainer.querySelectorAll('.soluong-input');
+    let updatedCart = [];
+
+    
+    inputs.forEach(input => {
+        const index = parseInt(input.dataset.index);
+        const quantity = parseInt(input.value);
+
+        const sanPham = JSON.parse(localStorage.getItem('shoppingCart'))[index];
+        sanPham.quantity = quantity;
+
+        updatedCart.push(sanPham);
+    });
+
+    localStorage.setItem('shoppingCart', JSON.stringify(updatedCart));
+
+    layGioHang();
+}
+
+
+
+
+</script>
+    
+</body>
+</html>
