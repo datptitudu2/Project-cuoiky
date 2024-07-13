@@ -17,10 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function logout() {
-    localStorage.removeItem('userInfo'); // Xóa thông tin người dùng khi đăng xuất
-    window.location.href = 'http://127.0.0.1:5500/js/login.html'; // Chuyển hướng về trang đăng nhập
+  const userInfoDiv = document.getElementById('userInfo');
+  userInfoDiv.innerHTML = `
+      <a href="http://127.0.0.1:5500/js/login.html">Đăng nhập</a>
+      <a href="http://127.0.0.1:5500/js/dangky.html">Đăng ký</a>
+  `; 
+  alert('Đăng xuất thành công!'); 
+  window.location.href = 'http://127.0.0.1:5500/js/login.html';
 }
-
 
 
 

@@ -648,7 +648,7 @@
         <div id="tt-thanhtoan" class="thongtin-thanhtoan">
         <h1>Thông tin thanh toán</h1>
         <h3>Vui lòng quét QR Code </h3>
-        <img src="qrcode.jpg" alt="anh qr" class="qrcode">
+        <img src="img/qrcode.jpg" alt="anh qr" class="qrcode">
          </div>
          <button type="button" class="button-buy-now" style="margin-left:350px;cursor:pointer" onclick="storeEmail()">Đặt Hàng </button>  
               
@@ -762,9 +762,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function logout() {
-    localStorage.removeItem('userInfo'); // Xóa thông tin người dùng khi đăng xuất
-    window.location.href = 'http://127.0.0.1:5500/js/login.html'; // Chuyển hướng về trang đăng nhập
+  const userInfoDiv = document.getElementById('userInfo');
+  userInfoDiv.innerHTML = `
+      <a href="http://127.0.0.1:5500/js/login.html">Đăng nhập</a>
+      <a href="http://127.0.0.1:5500/js/dangky.html">Đăng ký</a>
+  `; 
+  alert('Đăng xuất thành công!'); 
+  window.location.href = 'http://127.0.0.1:5500/js/login.html';
 }
+
  
 function myfunctionxx(){
         window.location.href='http://127.0.0.1:5500/js/trangthongtin.html';
@@ -797,9 +803,9 @@ function infothanhtoan() {
     // Nếu người dùng chọn Thẻ ATM/JCB/QRCode Napas
     if (payooRadio.checked && (!userInfo.ten || userInfo.ten.trim() === ''))  {
         window.alert('Vui lòng đăng nhập trước khi thanh toán!')
-        paymentInfoDiv.style.display = 'block'; 
+        paymentInfoDiv.style.display = 'none'; 
     } else {
-        paymentInfoDiv.style.display = 'none';
+        paymentInfoDiv.style.display = 'block';
     }
 }
  
@@ -979,8 +985,6 @@ if(!localStorage.getItem('sanpham')) {
   
     // Hàm sinh URL dựa vào tên sản phẩm
     function generateProductURL(productName) {
-      // Đây là một ví dụ đơn giản, bạn cần thay đổi phần này để phù hợp với cách bạn lưu trữ và xử lý sản phẩm
-      // Ví dụ, nếu bạn có một đối tượng JSON chứa thông tin sản phẩm và URL, bạn có thể lấy URL từ đối tượng đó.
       switch (productName) {
         case 'Giày Air Jordan 6 Rings ‘Tropical Twist’ (GS) 323419-115':
           return 'http://127.0.0.1:5500/js/web001.html';
